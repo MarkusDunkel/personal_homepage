@@ -2,6 +2,7 @@ import { Box, Tab, Tabs, Typography } from '@mui/material';
 import { SyntheticEvent, useRef, useState } from 'react';
 import './App.css';
 import ScrollToTop from './components/ScrollToTop';
+import SiteSection from './components/SiteSection';
 
 
 
@@ -49,10 +50,11 @@ function App() {
         <Tab value='contact' label="Contact Me" />
       </Tabs>
       <Box sx={{ padding: 2 }}>
-
-        <Box height='500px' ref={about} id='about'>
-          <Typography>The first tab</Typography>
-        </Box>
+        <SiteSection>
+          <Box height='500px' ref={about} id='about'>
+            <Typography>The first tab</Typography>
+          </Box>
+        </SiteSection>
         <Box height='500px' ref={project} id='projects'>
           <Typography>The second tab</Typography>
         </Box>

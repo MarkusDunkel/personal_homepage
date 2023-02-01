@@ -1,10 +1,10 @@
-import { Box, Tab, Tabs, Typography } from '@mui/material';
+import { Box, colors, createTheme, Tab, Tabs, ThemeProvider, Typography } from '@mui/material';
+import type { PaletteOptions } from '@mui/material';
 import { SyntheticEvent, useRef, useState } from 'react';
 import './App.css';
 import ScrollToTop from './components/ScrollToTop';
 import SiteSection from './components/SiteSection';
-
-
+import { defaultTheme } from './components/theme';
 
 function App() {
   const about: any = useRef<HTMLInputElement>(null);
@@ -42,28 +42,31 @@ function App() {
   }
   console.log("tabIndex", tabIndex);
   return (
-    <Box>
-      <ScrollToTop />
-      <Tabs value={tabIndex} onChange={scrollToSection} centered>
-        <Tab value='about' label="About me" />
-        <Tab value='project' label="Projects" />
-        <Tab value='contact' label="Contact Me" />
-      </Tabs>
-      <Box sx={{ padding: 2 }}>
-        <SiteSection>
-          <Box height='500px' ref={about} id='about'>
-            <Typography>The first tab</Typography>
-          </Box>
-        </SiteSection>
-        <Box height='500px' ref={project} id='projects'>
-          <Typography>The second tab</Typography>
-        </Box>
-        <Box height='500px' ref={contact} id='contact'>
-          <Typography>The third tab</Typography>
-        </Box>
+    <ThemeProvider theme={defaultTheme}>
 
-      </Box>
-    </Box >
+      <Box>
+        <ScrollToTop />
+        <Tabs value={tabIndex} onChange={scrollToSection} centered>
+          <Tab value='about' label="About me" />
+          <Tab value='project' label="Projects" />
+          <Tab value='contact' label="Contact Me" />
+        </Tabs>
+        <Box sx={{ padding: 2 }}>
+          <SiteSection>
+            <Box height='500px' ref={about} id='about'>
+              <Typography>The first tab</Typography>
+            </Box>
+          </SiteSection>
+          <Box height='500px' ref={project} id='projects'>
+            <Typography>The second tab</Typography>
+          </Box>
+          <Box height='500px' ref={contact} id='contact'>
+            <Typography>The third tab</Typography>
+          </Box>
+
+        </Box>
+      </Box >
+    </ThemeProvider>
   );
 }
 

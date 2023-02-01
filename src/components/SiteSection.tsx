@@ -6,7 +6,7 @@ export interface SiteSectionProps {
 }
 
 const SiteSection = ({ children }: SiteSectionProps) => {
-    return (<Card variant="elevation" sx={{ border: 'solid 1px black', bgcolor: 'blue' }}>
+    return (<Card variant="elevation" sx={{ border: 'solid 1px black', bgcolor: 'secondary.main' }}>
         {children}
     </Card>)
 }

@@ -8,6 +8,7 @@ import { defaultTheme } from './components/theme';
 import { aboutMeText } from './components/content';
 import profilePicture from './pictures/profilePicture.jpg'
 import ContentHolder from './components/ContentHolder';
+import NavBar from './components/NavBar';
 
 
 export const getTabProps = (
@@ -34,41 +35,13 @@ function App() {
   const [tabIndex, setTabIndex] = useState('about');
 
 
-  const scrollToSection = (event: SyntheticEvent<Element, Event>, newTabIndex: string) => {
-    setTabIndex(newTabIndex);
-
-
-    if (newTabIndex === 'about') {
-      window.scrollTo({
-        top: about.current.offsetTop,
-        behavior: "smooth",
-      });
-    } else if (newTabIndex === 'project') {
-      window.scrollTo({
-        top: project.current.offsetTop,
-        behavior: "smooth",
-      });
-    }
-    else {
-      window.scrollTo({
-        top: contact.current.offsetTop,
-        behavior: "smooth",
-      });
-    }
-  }
-
   return (
     <ThemeProvider theme={defaultTheme}>
 
       <Box>
         <ScrollToTop />
-        <Tabs value={tabIndex} onChange={scrollToSection} centered>
-          <Tab {...getTabProps(
-            'About Me', 'about'
-          )} />
-          <Tab value='project' label="Projects" />
-          <Tab value='contact' label="Contact Me" />
-        </Tabs>
+
+        <NavBar about={about} project={project} contact={contact} setTabIndex={setTabIndex} tabIndex={tabIndex} />
         <Box sx={{ width: '100%' }}>
           <SiteSection>
             <ContentHolder>

@@ -48,7 +48,7 @@ const NavBar = ({ about, project, contact, setTabIndex, tabIndex }: SiteSectionP
     }
 
     return (
-        <Tabs value={tabIndex} onChange={scrollToSection} centered>
+        <Tabs value={tabIndex} onChange={scrollToSection} centered sx={{ position: "fixed", left: '50%', transform: 'translate(-50%, 0)', }}>
             <Tab {...getTabProps(
                 'About Me', 'about'
             )} />

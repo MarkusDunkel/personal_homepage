@@ -5,13 +5,30 @@ import './App.css';
 import ScrollToTop from './components/ScrollToTop';
 import SiteSection from './components/SiteSection';
 import { defaultTheme } from './components/theme';
+import { aboutMeText } from './components/content';
+import profilePicture from './pictures/profilePicture.jpg'
+import ContentHolder from './components/ContentHolder';
+
+
+export const getTabProps = (
+  label: string,
+  value: string,
+) => {
+  return {
+    label: (
+      <Typography className='tab-label' variant='label'>
+        {label}
+      </Typography>
+    ),
+    value: value
+  };
+};
+
 
 function App() {
   const about: any = useRef<HTMLInputElement>(null);
   const project: any = useRef<HTMLInputElement>(null);
   const contact: any = useRef<HTMLInputElement>(null);
-
-  console.log("contact", contact);
 
 
   const [tabIndex, setTabIndex] = useState('about');
@@ -19,8 +36,7 @@ function App() {
 
   const scrollToSection = (event: SyntheticEvent<Element, Event>, newTabIndex: string) => {
     setTabIndex(newTabIndex);
-    console.log({ event });
-    console.log("newTabIndex", newTabIndex);
+
 
     if (newTabIndex === 'about') {
       window.scrollTo({
@@ -40,22 +56,27 @@ function App() {
       });
     }
   }
-  console.log("tabIndex", tabIndex);
+
   return (
     <ThemeProvider theme={defaultTheme}>
 
       <Box>
         <ScrollToTop />
         <Tabs value={tabIndex} onChange={scrollToSection} centered>
-          <Tab value='about' label="About me" />
+          <Tab {...getTabProps(
+            'About Me', 'about'
+          )} />
           <Tab value='project' label="Projects" />
           <Tab value='contact' label="Contact Me" />
         </Tabs>
-        <Box sx={{ padding: 2 }}>
+        <Box sx={{ width: '100%' }}>
           <SiteSection>
-            <Box height='500px' ref={about} id='about'>
-              <Typography>The first tab</Typography>
-            </Box>
+            <ContentHolder>
+              <img src={profilePicture} alt="fireSpot" style={{ width: '700px', }} />
+              <Box height='500px' ref={about} id='about' sx={{ border: '2px solid green' }}>
+                <Typography variant='body'>{aboutMeText}</Typography>
+              </Box>
+            </ContentHolder>
           </SiteSection>
           <Box height='500px' ref={project} id='projects'>
             <Typography>The second tab</Typography>

@@ -1,4 +1,4 @@
-import { Box, Card } from '@mui/material';
+import { Box, Card, useTheme } from '@mui/material';
 import { ReactNode } from 'react';
 
 export interface SiteSectionProps {
@@ -6,9 +6,11 @@ export interface SiteSectionProps {
 }
 
 const SiteSection = ({ children }: SiteSectionProps) => {
+
+    const theme = useTheme();
     return (<Card variant="elevation" sx={{
-        border: 'solid 1px black', bgcolor: 'secondary.main', padding: 0, textAlign: 'center', display: 'flex', justifyContent: 'center'
-    }}>
+        padding: 0, textAlign: 'center', display: 'flex', justifyContent: 'center'
+    }} style={{ background: theme.palette.gradients.bluePurple }}>
         {children}
     </Card >)
 }

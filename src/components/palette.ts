@@ -12,7 +12,7 @@ export const palette: PaletteOptions = {
         lightestBlue: '#E0EAF2',
         lightGrey: '#DEE2E3',
         lightestGrey: '#EEF0F1',
-        background: '#F9FAFA',
+        background: '#FFFFFF',
         // background: '#FFF',
     },
     primary: {
@@ -36,10 +36,10 @@ export const palette: PaletteOptions = {
         dark: '#AA2E25',
     },
     gradients: {
-        bluePurple: 'linear-gradient(to right, #D5B5FF, #77CEFF)',
+        bluePurple: 'linear-gradient(to right, #f5e3e6, #d9e4f5)',
     },
     secondary: { main: '#DEDBD8' },
     action: {
-        selected: '#f6be4f',
+        selected: '#FFC600',
     },
 };

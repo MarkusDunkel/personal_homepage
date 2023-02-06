@@ -1,0 +1,46 @@
+{
+    "projects": [
+        {
+            "id": "0",
+            "projectLink": "https://orf.at",
+            "repositoryLink": "https://github.com/MarkusDunkel/personal_homepage",
+            "title": "Personal Webpage",
+            "description": "This is the description of my personal web page.",
+            "techStack": [
+                {
+                    "title": "React.js"
+                },
+                {
+                    "title": "TypeScript"
+                }
+            ]
+        },
+        {
+            "id": "1",
+            "projectLink": "https://orf.at",
+            "repositoryLink": "https://github.com/MarkusDunkel/personal_homepage",
+            "title": "An ordering app",
+            "description": "This is the description of my ordering app.",
+            "techStack": [
+                {
+                    "title": "React.js"
+                },
+                {
+                    "title": "TypeScript"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "projectLink": "https://orf.at",
+            "repositoryLink": "https://github.com/MarkusDunkel/personal_homepage",
+            "title": "Master Thesis",
+            "description": "This is the description of my master thesis.",
+            "techStack": [
+                {
+                    "title": "Python"
+                }
+            ]
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-import type { ExtendedTypographyOptions } from './theme.d';
+import type { ExtendedTypographyOptions } from '../definitions/theme';
 
 function pxToRem(value: number) {
     return `${value / 16}rem`;

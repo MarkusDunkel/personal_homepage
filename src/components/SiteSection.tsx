@@ -8,11 +8,11 @@ export interface SiteSectionProps {
 const SiteSection = ({ children }: SiteSectionProps) => {
 
     const theme = useTheme();
-    return (<Card variant="elevation" sx={{
-        padding: 0, textAlign: 'center', display: 'flex', justifyContent: 'center'
+    return (<Box sx={{
+        padding: 0, textAlign: 'center', display: 'flex', justifyContent: 'center', pb: 4
     }} style={{ background: theme.palette.gradients.bluePurple }}>
         {children}
-    </Card >)
+    </Box>)
 }
 
 

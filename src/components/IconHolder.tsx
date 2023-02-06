@@ -1,23 +1,26 @@
-import { useTheme } from '@mui/material';
+import { Grid, useTheme } from '@mui/material';
 import { ReactNode } from 'react';
 import { IconContext } from 'react-icons';
 
 export interface IconHolderProps {
 
     link: string;
+    size: string;
     children: ReactNode;
 }
 
-const IconHolder = ({ link, children }: IconHolderProps) => {
+const IconHolder = ({ link, size, children }: IconHolderProps) => {
     const theme = useTheme();
     return (
         <IconContext.Provider value={{
-            color: theme.palette.action.selected, size: '40',
+            color: theme.palette.action.selected, size: size,
             className: "global-class-name"
         }}>
-            <a href={link}>
-                {children}
-            </a>
+            <Grid item>
+                <a href={link}>
+                    {children}
+                </a>
+            </Grid>
 
         </IconContext.Provider>
     )

@@ -51,8 +51,8 @@ const typography: ExtendedTypographyOptions = {
         fontSize: pxToRem(15),
     },
     body: {
-        lineHeight: '25px',
-        fontSize: pxToRem(20),
+        lineHeight: '22px',
+        fontSize: pxToRem(18),
         fontFamily: 'IBM Plex Sans, sans-serif',
     },
     caption: {
@@ -62,9 +62,9 @@ const typography: ExtendedTypographyOptions = {
     },
     caption2: {
         fontWeight: 400,
-        lineHeight: '18px',
-        fontSize: pxToRem(13),
-        fontFamily: 'Graphik',
+        lineHeight: '25px',
+        fontSize: pxToRem(25),
+        fontFamily: 'IBM Plex Sans, sans-serif',
     },
     footnote: {
         fontWeight: 400,

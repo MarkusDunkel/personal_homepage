@@ -81,11 +81,13 @@ function App() {
               </Grid>
             </ContentHolder>
           </SiteSection>
-          <Box minHeight='1000px' ref={project} id='projects'>
+          <Box ref={project} id='projects'>
             <SiteSection>
-              <ProjectCard projectId={0} />
-              <ProjectCard projectId={1} />
-              <ProjectCard projectId={2} />
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row-reverse', justifyContent: 'center', padding: 0, margin: 0 }}>
+                <ProjectCard projectId={0} />
+                <ProjectCard projectId={1} />
+                <ProjectCard projectId={2} />
+              </Box>
             </SiteSection>
           </Box>
           <Box height='500px' ref={contact} id='contact'>

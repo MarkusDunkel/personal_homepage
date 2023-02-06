@@ -20,8 +20,7 @@ const ProjectCard = ({ projectId }: ProjectCardProps) => {
 
     return (
         <a href={content.projectLink}>
-
-            <Card sx={{ position: 'relative', maxWidth: 500, padding: 2 }}>
+            <Card sx={{ position: 'relative', width: 300, padding: 2, m: 1 }}>
 
                 <Box bottom='20px' right='20px' sx={{ position: 'absolute' }}>
                     <IconHolder size='40' link={content.repositoryLink} >
@@ -60,7 +59,7 @@ const ProjectCard = ({ projectId }: ProjectCardProps) => {
                     </Grid>
                 </Grid>
             </Card>
-        </a>
+        </a >
     )
 }
 

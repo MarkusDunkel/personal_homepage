@@ -58,7 +58,7 @@ const NavBar = ({ about, project, contact, setTabIndex, tabIndex }: SiteSectionP
 
             <Tabs value={tabIndex} onChange={scrollToSection} centered textColor='primary' sx={{
                 position: "fixed", left: '50%', transform: 'translate(-50%, 0)',
-                bgcolor: backgroundColor, width: '100%', height: navBarHeight
+                bgcolor: backgroundColor, width: '100%', height: navBarHeight, zIndex: 1000
             }}>
                 <Tab {...getTabProps(
                     'About Me', 'about'

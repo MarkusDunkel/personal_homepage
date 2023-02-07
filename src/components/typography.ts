@@ -57,8 +57,9 @@ const typography: ExtendedTypographyOptions = {
     },
     caption: {
         lineHeight: 1.5,
-        fontSize: pxToRem(14),
+        fontSize: pxToRem(40),
         fontFamily: 'Graphik',
+        color: 'blue'
     },
     caption2: {
         fontWeight: 400,

@@ -63,7 +63,7 @@ function App() {
             <Grid alignItems="center"
               container direction='column' rowSpacing={5}>
               <Grid item>
-                Be proud of your work! A passion for development.
+                <Typography variant='caption'>climate enthusiast goes to frontend</Typography>
               </Grid>
               <Grid item>
                 <img src={profilePicture} alt="profilePicture" style={{ width: '80%', maxWidth: '700px', }} />

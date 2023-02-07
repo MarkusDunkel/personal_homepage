@@ -1,11 +1,28 @@
-import { Box, Card, Grid, Typography, useTheme } from '@mui/material';
+import { Box, Card, Container, Grid, Typography, useTheme } from '@mui/material';
 import { ReactNode } from 'react';
 import { SiGithub } from 'react-icons/si';
 import IconHolder from './IconHolder';
 import TechLabel from './TechLabel';
 import profilePicture from '../pictures/profilePicture.jpg';
 import c from '../content/projectCards.json';
+import { useMobileView } from './ContentHolderNew';
 
+
+interface ProjectCardIsMobileProps {
+    children: ReactNode;
+}
+
+const ProjectCardIsMobile = ({ children }: ProjectCardIsMobileProps) => {
+    return (<Box sx={{
+        width: '100%', border: '0px solid brown', bgcolor: 'orange'
+    }}>
+        {
+            useMobileView() ?
+                < Box sx={{ position: 'relative', width: 'calc(100%-20px)', m: 0, px: '20px', mb: 1, bgcolor: 'white', border: '1px solid blue' }}> {children}</Box > :
+                <Card sx={{ position: 'relative', width: 300, p: 2, mb: 1, border: '1px solid blue' }}>{children}</Card>
+        }
+    </Box >);
+}
 
 
 export interface ProjectCardProps {
@@ -20,13 +37,12 @@ const ProjectCard = ({ projectId }: ProjectCardProps) => {
 
     return (
         <a href={content.projectLink}>
-            <Card sx={{ position: 'relative', width: 300, padding: 2, m: 1 }}>
-
-                <Box bottom='20px' right='20px' sx={{ position: 'absolute' }}>
+            <ProjectCardIsMobile>
+                {/* <Box bottom='20px' right='20px' sx={{ position: 'absolute', height: 40 }}>
                     <IconHolder size='40' link={content.repositoryLink} >
                         <SiGithub />
                     </IconHolder>
-                </Box>
+                </Box> */}
                 <Grid alignItems="center"
                     container direction='column' rowSpacing={5}>
                     <Grid item>
@@ -58,7 +74,7 @@ const ProjectCard = ({ projectId }: ProjectCardProps) => {
                         </Typography>
                     </Grid>
                 </Grid>
-            </Card>
+            </ProjectCardIsMobile>
         </a >
     )
 }

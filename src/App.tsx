@@ -1,12 +1,13 @@
 import {
   Box, Card, Grid, ThemeProvider,
-  Typography, useTheme
+  Typography, useMediaQuery, useTheme
 } from '@mui/material';
 import { useRef, useState } from 'react';
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import './App.css';
 import { aboutMeText } from './components/content';
 import ContentHolder from './components/ContentHolder';
+import ContentHolderNew from './components/ContentHolderNew';
 import IconHolder from './components/IconHolder';
 import LinkSection from './components/LinkSection';
 import NavBar from './components/NavBar';
@@ -32,13 +33,12 @@ export const getTabProps = (
   };
 };
 
-
 function App() {
   const about: any = useRef<HTMLInputElement>(null);
   const project: any = useRef<HTMLInputElement>(null);
   const contact: any = useRef<HTMLInputElement>(null);
   const theme = useTheme();
-  console.log(theme.palette.primary.light);
+
   const [tabIndex, setTabIndex] = useState('about');
 
 
@@ -83,11 +83,13 @@ function App() {
           </SiteSection>
           <Box ref={project} id='projects'>
             <SiteSection>
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row-reverse', justifyContent: 'center', padding: 0, margin: 0 }}>
-                <ProjectCard projectId={0} />
-                <ProjectCard projectId={1} />
-                <ProjectCard projectId={2} />
-              </Box>
+              <ContentHolderNew>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row-reverse', justifyContent: 'center', padding: 0, margin: 0 }}>
+                  <ProjectCard projectId={0} />
+                  <ProjectCard projectId={1} />
+                  <ProjectCard projectId={2} />
+                </Box>
+              </ContentHolderNew>
             </SiteSection>
           </Box>
           <Box height='500px' ref={contact} id='contact'>

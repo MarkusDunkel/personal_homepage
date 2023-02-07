@@ -33,7 +33,14 @@ export const getTabProps = (
   };
 };
 
+export const useMobileView = () => {
+  const matches = useMediaQuery('(max-width:400px)');
+  return (matches);
+};
+
 function App() {
+
+  const isMobile = useMobileView();
   const about: any = useRef<HTMLInputElement>(null);
   const project: any = useRef<HTMLInputElement>(null);
   const contact: any = useRef<HTMLInputElement>(null);
@@ -51,51 +58,54 @@ function App() {
         <NavBar about={about} project={project} contact={contact}
           setTabIndex={setTabIndex}
           tabIndex={tabIndex} />
-        <Box sx={{ width: '100%' }}>
-          <SiteSection>
-            <ContentHolder>
-              <Grid alignItems="center"
-                container direction='column' rowSpacing={5}>
-
-                <Grid item>
-                  <img src={profilePicture} alt="profilePicture" style={{ width: '80%', maxWidth: '700px', }} />
-                </Grid>
-                <Grid item>
-                  <Box ref={about} id='about'
-                    sx={{ textAlign: 'left' }}>
-
-                    <Typography variant='body'>{aboutMeText}</Typography>
-                  </Box>
-                </Grid>
-                <Grid item>
-                  <LinkSection>
-                    <IconHolder size='40' link='https://linkedin.com/in/mdunkel/' >
-                      <SiLinkedin />
-                    </IconHolder>
-                    <IconHolder size='40' link='https://github.com/MarkusDunkel' >
-                      <SiGithub />
-                    </IconHolder>
-                  </LinkSection>
-                </Grid>
-
+        <SiteSection>
+          <Box sx={{ width: '95%', maxWidth: 500 }}>
+            <Grid alignItems="center"
+              container direction='column' rowSpacing={5}>
+              <Grid item>
+                Be proud of your work! A passion for development.
               </Grid>
-            </ContentHolder>
-          </SiteSection>
-          <Box ref={project} id='projects'>
-            <SiteSection>
-              <ContentHolderNew>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row-reverse', justifyContent: 'center', padding: 0, margin: 0 }}>
-                  <ProjectCard projectId={0} />
-                  <ProjectCard projectId={1} />
-                  <ProjectCard projectId={2} />
-                </Box>
-              </ContentHolderNew>
-            </SiteSection>
-          </Box>
-          <Box height='500px' ref={contact} id='contact'>
-            <Typography>The third tab</Typography>
-          </Box>
+              <Grid item>
+                <img src={profilePicture} alt="profilePicture" style={{ width: '80%', maxWidth: '700px', }} />
+              </Grid>
+              <Grid item>
+                <Box ref={about} id='about'
+                  sx={{ textAlign: 'left' }}>
 
+                  <Typography variant='body'>{aboutMeText}</Typography>
+                </Box>
+              </Grid>
+              <Grid item>
+                <LinkSection>
+                  <IconHolder size='40' link='https://linkedin.com/in/mdunkel/' >
+                    <SiLinkedin />
+                  </IconHolder>
+                  <IconHolder size='40' link='https://github.com/MarkusDunkel' >
+                    <SiGithub />
+                  </IconHolder>
+                </LinkSection>
+              </Grid>
+
+            </Grid>
+          </Box>
+        </SiteSection>
+        <Box ref={project} id='projects'>
+          <SiteSection>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row-reverse', justifyContent: 'center', padding: 0, margin: 0, rowGap: '30px', columnGap: '20px' }}>
+              <ContentHolderNew isMobile={isMobile}>
+                <ProjectCard projectId={0} />
+              </ContentHolderNew>
+              <ContentHolderNew isMobile={isMobile}>
+                <ProjectCard projectId={1} />
+              </ContentHolderNew>
+              <ContentHolderNew isMobile={isMobile}>
+                <ProjectCard projectId={2} />
+              </ContentHolderNew>
+            </Box>
+          </SiteSection>
+        </Box>
+        <Box height='500px' ref={contact} id='contact'>
+          <Typography>The third tab</Typography>
         </Box>
       </Box >
     </ThemeProvider >

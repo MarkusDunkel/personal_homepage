@@ -4,6 +4,7 @@ import {
 } from '@mui/material';
 import { useRef, useState } from 'react';
 import { SiGithub, SiLinkedin } from "react-icons/si";
+import { FiSend, FiPhone } from "react-icons/fi";
 import './App.css';
 import { aboutMeText } from './components/content';
 import ContentHolder from './components/ContentHolder';
@@ -57,6 +58,7 @@ function App() {
         <NavBar about={about} project={project} contact={contact}
           setTabIndex={setTabIndex}
           tabIndex={tabIndex} />
+
         <SiteSection>
           <Grid container spacing={0}>
             <Grid item xs={12}>
@@ -76,12 +78,23 @@ function App() {
               <Box sx={{ position: 'absolute', maxWidth: '300px', border: '0px solid orange', top: '80vh', left: '60%' }}>
                 <Box sx={{ textAlign: 'left' }}>Meteorology</Box>
               </Box>
+              <Box sx={{ position: 'absolute', maxWidth: '300px', border: '0px solid orange', top: '75vh', right: '52%' }}>
+                <IconHolder size='40' link='https://linkedin.com/in/mdunkel/' >
+                  <SiLinkedin />
+                </IconHolder>
+              </Box>
+              <Box sx={{ position: 'absolute', maxWidth: '300px', border: '0px solid orange', top: '85vh', right: '52%' }}>
+                <IconHolder size='40' link='https://github.com/MarkusDunkel' >
+                  <SiGithub />
+                </IconHolder>
+              </Box>
             </Grid>
             <Grid item xs={6} md={6}>
               <Box sx={{ border: '0px solid orange', height: '100vh' }}></Box>
             </Grid>
           </Grid>
         </SiteSection>
+
         <SiteSection>
           <Grid container spacing={0}>
             <Grid item xs={12} md={10}>
@@ -102,37 +115,18 @@ function App() {
             </Grid>
           </Grid>
         </SiteSection>
-        {/* <SiteSection>
-          <Box sx={{ width: '95%', maxWidth: 500 }}>
-            <Grid alignItems="center"
-              container direction='column' rowSpacing={5}>
-              <Grid item>
-                <Typography variant='caption'>climate enthusiast goes to frontend</Typography>
-              </Grid>
-              <Grid item>
-                <img src={profilePicture} alt="profilePicture" style={{ width: '80%', maxWidth: '700px', }} />
-              </Grid>
-              <Grid item>
-                <Box ref={about} id='about'
-                  sx={{ textAlign: 'left' }}>
 
-                  <Typography variant='body'>{aboutMeText}</Typography>
-                </Box>
-              </Grid>
-              <Grid item>
-                <LinkSection>
-                  <IconHolder size='40' link='https://linkedin.com/in/mdunkel/' >
-                    <SiLinkedin />
-                  </IconHolder>
-                  <IconHolder size='40' link='https://github.com/MarkusDunkel' >
-                    <SiGithub />
-                  </IconHolder>
-                </LinkSection>
-              </Grid>
-
+        <SiteSection>
+          <Grid container spacing={0}>
+            <Grid item xs={6} md={6}>
+              <Box sx={{ borderRight: 1, height: '60vh' }}></Box>
             </Grid>
-          </Box>
-        </SiteSection> */}
+            <Grid item xs={6} md={6}>
+              <Box sx={{ border: '0px solid orange', height: '60vh' }}></Box>
+            </Grid>
+          </Grid>
+        </SiteSection>
+
         <Box ref={project} id='projects'>
           <SiteSection>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row-reverse', justifyContent: 'center', padding: 0, margin: 0, rowGap: '30px', columnGap: '20px' }}>
@@ -148,10 +142,34 @@ function App() {
             </Box>
           </SiteSection>
         </Box>
-        <Box height='500px' ref={contact} id='contact'>
-          <Typography>The third tab</Typography>
+
+        <SiteSection>
+          <Grid container spacing={0}>
+            <Grid item xs={6} md={6}>
+              <Box sx={{ borderRight: 1, height: '60vh' }}></Box>
+            </Grid>
+            <Grid item xs={6} md={6}>
+              <Box sx={{ border: '0px solid orange', height: '60vh' }}></Box>
+            </Grid>
+          </Grid>
+        </SiteSection>
+
+        <Box height='100vh' ref={contact} id='contact'>
+          <Box textAlign='center' mt={20}>
+            <IconHolder size='40' link='https://github.com/MarkusDunkel' >
+              <FiSend />
+            </IconHolder>
+            mrks.dunkel@gmail.com
+          </Box>
+          <Box textAlign='center' mt={15}>
+            <IconHolder size='40' link='https://github.com/MarkusDunkel' >
+              <FiPhone />
+            </IconHolder>
+            +43 676 4807812
+          </Box>
         </Box>
-      </Box >
+      </Box>
+
     </ThemeProvider >
   );
 }

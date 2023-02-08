@@ -54,10 +54,24 @@ function App() {
 
       <Box>
         <ScrollToTop />
-
         <NavBar about={about} project={project} contact={contact}
           setTabIndex={setTabIndex}
           tabIndex={tabIndex} />
+        <SiteSection>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={8}>
+              <Box sx={{ border: '1px solid orange' }}>climate enthusiast goes to frontend</Box>
+            </Grid>
+            <Grid item xs={12} md={10}>
+              <Box sx={{ border: '1px solid orange' }}>Box B</Box>
+            </Grid>
+            <Grid item xs={12} md={12}>
+              <Box sx={{ maxWidth: 500, border: '1px solid orange', mr: '25%', float: 'right' }}>
+                {aboutMeText}
+              </Box>
+            </Grid>
+          </Grid>
+        </SiteSection>
         <SiteSection>
           <Box sx={{ width: '95%', maxWidth: 500 }}>
             <Grid alignItems="center"

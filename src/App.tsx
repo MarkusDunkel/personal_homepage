@@ -58,21 +58,51 @@ function App() {
           setTabIndex={setTabIndex}
           tabIndex={tabIndex} />
         <SiteSection>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={8}>
-              <Box sx={{ border: '1px solid orange' }}>climate enthusiast goes to frontend</Box>
+          <Grid container spacing={0}>
+            <Grid item xs={12}>
+              <Box sx={{ borderTop: 1, height: '0' }}></Box>
             </Grid>
-            <Grid item xs={12} md={10}>
-              <Box sx={{ border: '1px solid orange' }}>Box B</Box>
-            </Grid>
-            <Grid item xs={12} md={12}>
-              <Box sx={{ maxWidth: 500, border: '1px solid orange', mr: '25%', float: 'right' }}>
-                {aboutMeText}
+            <Grid item xs={6} md={6}>
+              <Box sx={{ position: 'relative', borderRight: 1, height: '100vh' }}></Box>
+              <Box sx={{ position: 'absolute', maxWidth: '300px', border: '0px solid orange', top: '40vh', right: '52%' }}>
+                <Box sx={{ textAlign: 'right' }}>Markus Dunkel, MSc</Box>
               </Box>
+              <Box sx={{ position: 'absolute', maxWidth: '300px', border: '0px solid orange', top: '45vh', left: '52%' }}>
+                <Box sx={{ textAlign: 'left' }}>Frontend - React.js - Typescript - Git - Docker - Python - SQL</Box>
+              </Box>
+              <Box sx={{ position: 'absolute', maxWidth: '300px', border: '0px solid orange', top: '65vh', left: '52%' }}>
+                <Box sx={{ textAlign: 'left' }}>Climate Physics</Box>
+              </Box>
+              <Box sx={{ position: 'absolute', maxWidth: '300px', border: '0px solid orange', top: '80vh', left: '60%' }}>
+                <Box sx={{ textAlign: 'left' }}>Meteorology</Box>
+              </Box>
+            </Grid>
+            <Grid item xs={6} md={6}>
+              <Box sx={{ border: '0px solid orange', height: '100vh' }}></Box>
             </Grid>
           </Grid>
         </SiteSection>
         <SiteSection>
+          <Grid container spacing={0}>
+            <Grid item xs={12} md={10}>
+              <Box sx={{ border: '0px solid orange' }}><img src={profilePicture} alt="profilePicture" style={{ width: '80%', maxWidth: '700px', }} /></Box>
+            </Grid>
+            <Grid item xs={0} md={4}>
+              <Box sx={{ border: '0px solid orange' }}>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={5}>
+              <Box ref={about} id='about' sx={{ textAlign: 'left', border: '0px solid orange', p: 2 }}>
+                <Typography variant='body'>{aboutMeText}</Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={0} md={3}>
+              <Box sx={{ border: '0px solid orange' }}>
+              </Box>
+            </Grid>
+          </Grid>
+        </SiteSection>
+        {/* <SiteSection>
           <Box sx={{ width: '95%', maxWidth: 500 }}>
             <Grid alignItems="center"
               container direction='column' rowSpacing={5}>
@@ -102,7 +132,7 @@ function App() {
 
             </Grid>
           </Box>
-        </SiteSection>
+        </SiteSection> */}
         <Box ref={project} id='projects'>
           <SiteSection>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row-reverse', justifyContent: 'center', padding: 0, margin: 0, rowGap: '30px', columnGap: '20px' }}>

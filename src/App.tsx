@@ -100,9 +100,8 @@ function App() {
         </SiteSection>
 
         <SiteSection>
-          <Grid container spacing={0}>
+          {/* <Grid container spacing={0}>
             <Grid item xs={12} md={10}>
-              {/* <Box sx={{ border: '0px solid orange' }}><img src={profilePicture} alt="profilePicture" style={{ width: '80%', maxWidth: '700px', }} /></Box> */}
               <Box sx={{ border: '0px solid orange' }}><img src={profPic} alt="profPic" style={{ maxWidth: '700px', }} /></Box>
             </Grid>
             <Grid item xs={0} md={4}>
@@ -118,7 +117,17 @@ function App() {
               <Box sx={{ border: '0px solid orange' }}>
               </Box>
             </Grid>
-          </Grid>
+          </Grid> */}
+          <Box sx={{ display: 'flex', border: '0px solid orange', justifyContent: 'center', gap: '2vw', width: .9, flexWrap: 'wrap' }}>
+            <Box sx={{ border: '0px solid red' }}><img src={profPic} alt="profPic" style={{ maxWidth: '700px', }} /></Box>
+
+            <Box ref={about} id='about' sx={{ display: 'flex', textAlign: 'left', border: '0px solid red', p: .5, width: '100%', maxWidth: 700, bgcolor: 'rgba(0, 0, 0, 0.2)', alignContent: 'center' }}>
+              {/* <Box my='auto'> */}
+              <Typography variant='body' sx={{ my: 'auto' }}>{aboutMeText}</Typography>
+              {/* </Box> */}
+            </Box>
+
+          </Box>
         </SiteSection>
 
         <SiteSection>

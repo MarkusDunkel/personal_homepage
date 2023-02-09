@@ -54,6 +54,7 @@ const typography: ExtendedTypographyOptions = {
         lineHeight: '22px',
         fontSize: pxToRem(18),
         fontFamily: 'IBM Plex Sans, sans-serif',
+        color: 'white'
     },
     caption: {
         lineHeight: 1.5,

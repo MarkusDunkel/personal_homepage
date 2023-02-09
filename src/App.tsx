@@ -17,7 +17,8 @@ import ScrollToTop from './components/ScrollToTop';
 import SiteSection from './components/SiteSection';
 import TechLabel from './components/TechLabel';
 import { defaultTheme } from './components/theme';
-import profilePicture from './pictures/profilePicture.jpg';
+//import profilePicture from './pictures/profilePicture.jpg';
+import profPic from './pictures/profPic.png';
 // import background from './pictures/background.jpg';
 import background from './pictures/ha.png';
 
@@ -65,14 +66,18 @@ function App() {
         <SiteSection>
           <Grid container spacing={0}>
             <Grid item xs={12}>
-              <Box sx={{ borderTop: 1, height: '0' }}></Box>
+              <Box sx={{ height: '0' }}></Box>
             </Grid>
             <Grid item xs={6} md={6}>
-              <Box sx={{ position: 'relative', borderRight: 'calc(3px + .2vw) dotted orange', height: '100vh' }}></Box>
-              <Box sx={{ position: 'absolute', maxWidth: '48%', border: '0px solid orange', top: '30vh', right: '52%' }}>
+              <Box sx={{
+                position: 'relative',
+                zIndex: '10',
+                height: '100vh'
+              }}></Box>
+              <Box sx={{ position: 'absolute', maxWidth: '44%', border: '0px solid orange', top: '30vh', right: '52%' }}>
                 <Box sx={{ textAlign: 'right', color: 'white', border: '0px solid orange' }}><Typography sx={{ fontSize: 'calc(14px + 1.5vw)' }}>Markus Dunkel, MSc</Typography></Box>
               </Box>
-              <Box sx={{ position: 'absolute', maxWidth: '48%', border: '0px solid orange', top: '35vh', left: '52%', color: 'white' }}>
+              <Box sx={{ position: 'absolute', maxWidth: '44%', border: '0px solid orange', top: '35vh', left: '52%', color: 'white' }}>
                 <Box sx={{ textAlign: 'left' }}>
                   <Typography sx={{ fontSize: 'calc(14px + 1vw)' }}>Frontend - React.js - Typescript - Git - Docker - Python - SQL</Typography>
                   <Typography sx={{ fontSize: 'calc(14px + 1vw)', mt: '4vh' }}>Climate Physics</Typography>
@@ -97,7 +102,8 @@ function App() {
         <SiteSection>
           <Grid container spacing={0}>
             <Grid item xs={12} md={10}>
-              <Box sx={{ border: '0px solid orange' }}><img src={profilePicture} alt="profilePicture" style={{ width: '80%', maxWidth: '700px', }} /></Box>
+              {/* <Box sx={{ border: '0px solid orange' }}><img src={profilePicture} alt="profilePicture" style={{ width: '80%', maxWidth: '700px', }} /></Box> */}
+              <Box sx={{ border: '0px solid orange' }}><img src={profPic} alt="profPic" style={{ maxWidth: '700px', }} /></Box>
             </Grid>
             <Grid item xs={0} md={4}>
               <Box sx={{ border: '0px solid orange' }}>

@@ -13,7 +13,11 @@ const IconHolder = ({ link, size, children }: IconHolderProps) => {
     const theme = useTheme();
     return (
         <IconContext.Provider value={{
-            color: theme.palette.action.selected, size: size,
+            color: theme.palette.action.selected,
+            // size: size,
+            style: {
+                fontSize: 'calc(40px + 2vw)'
+            },
             className: "global-class-name"
         }}>
             <Grid item>
@@ -22,7 +26,7 @@ const IconHolder = ({ link, size, children }: IconHolderProps) => {
                 </a>
             </Grid>
 
-        </IconContext.Provider>
+        </IconContext.Provider >
     )
 }
 

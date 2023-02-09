@@ -18,7 +18,8 @@ import SiteSection from './components/SiteSection';
 import TechLabel from './components/TechLabel';
 import { defaultTheme } from './components/theme';
 import profilePicture from './pictures/profilePicture.jpg';
-
+// import background from './pictures/background.jpg';
+import background from './pictures/ha.png';
 
 export const getTabProps = (
   label: string,
@@ -53,8 +54,10 @@ function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
 
-      <Box>
-        <ScrollToTop />
+      <Box sx={{ position: 'relative' }}>
+        <Box sx={{ position: "fixed", zIndex: '-1', bgcolor: 'blue' }}><img src={background} alt="background" style={{ height: 'max(100vh , 60vw)', opacity: .8, filter: 'blur(2px)' }} />
+        </Box>
+        < ScrollToTop />
         <NavBar about={about} project={project} contact={contact}
           setTabIndex={setTabIndex}
           tabIndex={tabIndex} />
@@ -65,28 +68,24 @@ function App() {
               <Box sx={{ borderTop: 1, height: '0' }}></Box>
             </Grid>
             <Grid item xs={6} md={6}>
-              <Box sx={{ position: 'relative', borderRight: 1, height: '100vh' }}></Box>
-              <Box sx={{ position: 'absolute', maxWidth: '300px', border: '0px solid orange', top: '40vh', right: '52%' }}>
-                <Box sx={{ textAlign: 'right' }}>Markus Dunkel, MSc</Box>
+              <Box sx={{ position: 'relative', borderRight: 'calc(3px + .2vw) dotted orange', height: '100vh' }}></Box>
+              <Box sx={{ position: 'absolute', maxWidth: '48%', border: '0px solid orange', top: '30vh', right: '52%' }}>
+                <Box sx={{ textAlign: 'right', color: 'white', border: '0px solid orange' }}><Typography sx={{ fontSize: 'calc(14px + 1.5vw)' }}>Markus Dunkel, MSc</Typography></Box>
               </Box>
-              <Box sx={{ position: 'absolute', maxWidth: '300px', border: '0px solid orange', top: '45vh', left: '52%' }}>
-                <Box sx={{ textAlign: 'left' }}>Frontend - React.js - Typescript - Git - Docker - Python - SQL</Box>
-              </Box>
-              <Box sx={{ position: 'absolute', maxWidth: '300px', border: '0px solid orange', top: '65vh', left: '52%' }}>
-                <Box sx={{ textAlign: 'left' }}>Climate Physics</Box>
-              </Box>
-              <Box sx={{ position: 'absolute', maxWidth: '300px', border: '0px solid orange', top: '80vh', left: '60%' }}>
-                <Box sx={{ textAlign: 'left' }}>Meteorology</Box>
-              </Box>
-              <Box sx={{ position: 'absolute', maxWidth: '300px', border: '0px solid orange', top: '75vh', right: '52%' }}>
-                <IconHolder size='40' link='https://linkedin.com/in/mdunkel/' >
-                  <SiLinkedin />
-                </IconHolder>
-              </Box>
-              <Box sx={{ position: 'absolute', maxWidth: '300px', border: '0px solid orange', top: '85vh', right: '52%' }}>
-                <IconHolder size='40' link='https://github.com/MarkusDunkel' >
-                  <SiGithub />
-                </IconHolder>
+              <Box sx={{ position: 'absolute', maxWidth: '48%', border: '0px solid orange', top: '35vh', left: '52%', color: 'white' }}>
+                <Box sx={{ textAlign: 'left' }}>
+                  <Typography sx={{ fontSize: 'calc(14px + 1vw)' }}>Frontend - React.js - Typescript - Git - Docker - Python - SQL</Typography>
+                  <Typography sx={{ fontSize: 'calc(14px + 1vw)', mt: '4vh' }}>Climate Physics</Typography>
+                  <Typography sx={{ fontSize: 'calc(14px + 1vw)', mt: '4vh' }}>Meteorology</Typography>
+                  <Box sx={{ display: 'flex', gap: '8%', border: '0px solid orange', mt: '4vh' }}>
+                    <IconHolder size='40' link='https://linkedin.com/in/mdunkel/' >
+                      <SiLinkedin />
+                    </IconHolder>
+                    <IconHolder size='40' link='https://github.com/MarkusDunkel' >
+                      <SiGithub />
+                    </IconHolder>
+                  </Box>
+                </Box>
               </Box>
             </Grid>
             <Grid item xs={6} md={6}>

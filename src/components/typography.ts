@@ -40,21 +40,21 @@ const typography: ExtendedTypographyOptions = {
         fontSize: pxToRem(20),
     },
     label: {
-        fontWeight: 500,
-        lineHeight: 1.5,
-        fontSize: pxToRem(16),
-        fontFamily: 'Roboto, sans-serif',
+        fontWeight: 400,
+        lineHeight: '20px',
+        fontSize: pxToRem(15),
+        fontFamily: 'IBM Plex Sans, sans-serif',
     },
     label2: {
         fontWeight: 650,
         lineHeight: 22 / 14,
         fontSize: pxToRem(15),
+        fontFamily: 'IBM Plex Sans, sans-serif',
     },
     body: {
         lineHeight: '22px',
         fontSize: pxToRem(18),
         fontFamily: 'IBM Plex Sans, sans-serif',
-        color: 'white'
     },
     caption: {
         lineHeight: 1.5,

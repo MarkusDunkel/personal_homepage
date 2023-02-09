@@ -83,10 +83,10 @@ function App() {
                   <Typography sx={{ fontSize: 'calc(14px + 1vw)', mt: '4vh' }}>Climate Physics</Typography>
                   <Typography sx={{ fontSize: 'calc(14px + 1vw)', mt: '4vh' }}>Meteorology</Typography>
                   <Box sx={{ display: 'flex', gap: '8%', border: '0px solid orange', mt: '4vh' }}>
-                    <IconHolder size='40' link='https://linkedin.com/in/mdunkel/' >
+                    <IconHolder size='calc(40px + 2vw)' link='https://linkedin.com/in/mdunkel/' >
                       <SiLinkedin />
                     </IconHolder>
-                    <IconHolder size='40' link='https://github.com/MarkusDunkel' >
+                    <IconHolder size='calc(40px + 2vw)' link='https://github.com/MarkusDunkel' >
                       <SiGithub />
                     </IconHolder>
                   </Box>
@@ -100,31 +100,22 @@ function App() {
         </SiteSection>
 
         <SiteSection>
-          {/* <Grid container spacing={0}>
-            <Grid item xs={12} md={10}>
-              <Box sx={{ border: '0px solid orange' }}><img src={profPic} alt="profPic" style={{ maxWidth: '700px', }} /></Box>
+          <Grid container spacing={0}>
+            <Grid item xs={6} md={6}>
+              <Box sx={{ borderRight: 0, height: '100vh' }}></Box>
             </Grid>
-            <Grid item xs={0} md={4}>
-              <Box sx={{ border: '0px solid orange' }}>
-              </Box>
+            <Grid item xs={6} md={6}>
+              <Box sx={{ border: '0px solid orange', height: '100vh' }}></Box>
             </Grid>
-            <Grid item xs={12} md={5}>
-              <Box ref={about} id='about' sx={{ textAlign: 'left', border: '0px solid orange', p: 2 }}>
-                <Typography variant='body'>{aboutMeText}</Typography>
-              </Box>
-            </Grid>
-            <Grid item xs={0} md={3}>
-              <Box sx={{ border: '0px solid orange' }}>
-              </Box>
-            </Grid>
-          </Grid> */}
+          </Grid>
+        </SiteSection>
+
+        <SiteSection>
           <Box sx={{ display: 'flex', border: '0px solid orange', justifyContent: 'center', gap: '2vw', width: .9, flexWrap: 'wrap' }}>
             <Box sx={{ border: '0px solid red' }}><img src={profPic} alt="profPic" style={{ maxWidth: '700px', }} /></Box>
 
             <Box ref={about} id='about' sx={{ display: 'flex', textAlign: 'left', border: '0px solid red', p: .5, width: '100%', maxWidth: 700, bgcolor: 'rgba(0, 0, 0, 0.2)', alignContent: 'center' }}>
-              {/* <Box my='auto'> */}
-              <Typography variant='body' sx={{ my: 'auto' }}>{aboutMeText}</Typography>
-              {/* </Box> */}
+              <Typography variant='body' sx={{ my: 'auto', color: 'white' }}>{aboutMeText}</Typography>
             </Box>
 
           </Box>
@@ -133,10 +124,10 @@ function App() {
         <SiteSection>
           <Grid container spacing={0}>
             <Grid item xs={6} md={6}>
-              <Box sx={{ borderRight: 1, height: '60vh' }}></Box>
+              <Box sx={{ borderRight: 0, height: '100vh' }}></Box>
             </Grid>
             <Grid item xs={6} md={6}>
-              <Box sx={{ border: '0px solid orange', height: '60vh' }}></Box>
+              <Box sx={{ border: '0px solid orange', height: '100vh' }}></Box>
             </Grid>
           </Grid>
         </SiteSection>
@@ -160,10 +151,10 @@ function App() {
         <SiteSection>
           <Grid container spacing={0}>
             <Grid item xs={6} md={6}>
-              <Box sx={{ borderRight: 1, height: '60vh' }}></Box>
+              <Box sx={{ borderRight: 0, height: '100vh' }}></Box>
             </Grid>
             <Grid item xs={6} md={6}>
-              <Box sx={{ border: '0px solid orange', height: '60vh' }}></Box>
+              <Box sx={{ border: '0px solid orange', height: '100vh' }}></Box>
             </Grid>
           </Grid>
         </SiteSection>

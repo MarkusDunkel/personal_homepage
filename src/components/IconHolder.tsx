@@ -14,9 +14,8 @@ const IconHolder = ({ link, size, children }: IconHolderProps) => {
     return (
         <IconContext.Provider value={{
             color: theme.palette.action.selected,
-            // size: size,
             style: {
-                fontSize: 'calc(40px + 2vw)'
+                fontSize: size
             },
             className: "global-class-name"
         }}>

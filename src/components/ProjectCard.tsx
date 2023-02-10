@@ -2,9 +2,13 @@ import { Avatar, Box, Card, Container, Grid, Typography, useTheme } from '@mui/m
 import { Stack } from '@mui/system';
 import { SiGithub } from 'react-icons/si';
 import c from '../content/projectCards.json';
-import profilePicture from '../pictures/profilePicture.jpg';
+import titleImg1 from '../pictures/titleImg1.png';
+import titleImg2 from '../pictures/titleImg2.png';
+import titleImg3 from '../pictures/titleImg3.png';
 import IconHolder from './IconHolder';
 import TechLabel from './TechLabel';
+
+
 
 export interface ProjectCardProps {
     projectId: number
@@ -16,25 +20,25 @@ const ProjectCard = ({ projectId }: ProjectCardProps) => {
 
     const content = c.projects[projectId];
 
+    let titleImage: any = titleImg1;
+
+    if (content.id === '1') { titleImage = titleImg1 }
+    else if (content.id === '2') { titleImage = titleImg2 }
+    else if (content.id === '3') { titleImage = titleImg3 }
+
     return (
         <>
 
             <a href={content.projectLink}>
                 <Card sx={{ position: 'relative', height: .93, p: 2, border: '0px solid brown', bgcolor: 'rgba(255, 255, 255, .7)' }}>
                     <Stack spacing={2}>
-                        {/* <Grid alignItems="center" container direction='column' rowSpacing={5}> */}
-                        {/* <Grid item> */}
                         <Typography variant='caption2'>
                             {content.title}
                         </Typography>
-                        {/* </Grid> */}
-                        {/* <Grid item> */}
-                        {/* </Grid> */}
-                        {/* <Grid item sx={{ textAlign: 'left' }}> */}
                         <Card variant='outlined' sx={{ textAlign: 'left', padding: 0, minHeight: 270, bgcolor: 'rgba(255, 255, 255, .2)' }}>
                             <Stack spacing={1}>
                                 <Box sx={{ border: '0px solid orange', height: 160, overflow: 'hidden', display: 'block' }}>
-                                    <img src={profilePicture} alt="profilePicture" style={{
+                                    <img src={titleImage} alt="titleImage" style={{
                                         width: '100%', display: 'block', marginLeft: 'auto', marginRight: 'auto'
                                     }} />
                                 </Box>
@@ -44,9 +48,6 @@ const ProjectCard = ({ projectId }: ProjectCardProps) => {
 
                             </Stack>
                         </Card>
-                        {/* </Grid> */}
-
-                        {/* <Grid item sx={{ textAlign: 'left' }}> */}
                         <Typography variant='body' sx={{ textAlign: 'left' }} >
                             <Grid container direction='row' spacing={2}>
                                 {content.techStack.map(({ title }) => {
@@ -58,8 +59,6 @@ const ProjectCard = ({ projectId }: ProjectCardProps) => {
                                 })}
                             </Grid>
                         </Typography>
-                        {/* </Grid> */}
-                        {/* </Grid> */}
                     </Stack>
                 </Card>
             </a >
@@ -75,6 +74,5 @@ const ProjectCard = ({ projectId }: ProjectCardProps) => {
         </>
     )
 }
-
 
 export default ProjectCard

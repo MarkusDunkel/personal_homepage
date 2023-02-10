@@ -14,15 +14,8 @@ import ProjectCard from './components/ProjectCard';
 import ScrollToTop from './components/ScrollToTop';
 import SiteSection from './components/SiteSection';
 import { defaultTheme } from './components/theme';
-//import profilePicture from './pictures/profilePicture.jpg';
-import profPic from './pictures/profPic.png';
-// import background from './pictures/background.jpg';
-import React from 'react';
 import background from './pictures/background.png';
-//import Background from './components/LazyBackground';
-// import { setTimeout } from "timers/promises";
-
-// const Background = React.lazy(() => import('./components/LazyBackground'));
+import profPic from './pictures/profPic.png';
 
 export const getTabProps = (
   label: string,
@@ -60,8 +53,7 @@ function App() {
 
     await bgPromise;
 
-    setTimeout(() => { setIsLoading(false); }, 1000);
-    // setIsLoading(false);
+    setTimeout(() => { setIsLoading(false); }, 0);
   };
 
 
@@ -86,9 +78,6 @@ function App() {
             <Box sx={{ position: "fixed", zIndex: '-1', bgcolor: 'blue' }}>
               <img src={background} alt="background" style={{ height: 'max(100vh , 60vw)', opacity: .8, filter: 'blur(0px)' }} />
             </Box>
-            {/* <React.Suspense>
-          <Background />
-        </React.Suspense> */}
             < ScrollToTop />
             <NavBar about={about} project={project} contact={contact}
               setTabIndex={setTabIndex}
@@ -110,10 +99,10 @@ function App() {
                   </Box>
                   <Box sx={{ position: 'absolute', maxWidth: '44%', border: '0px solid orange', top: '35vh', left: '52%', color: 'white' }}>
                     <Box sx={{ textAlign: 'left' }}>
-                      <Typography className='lineUp' sx={{ animationDelay: '.7s', fontSize: 'calc(14px + 1vw)' }}>Frontend - React.js - Typescript - Git - Docker - Python - SQL</Typography>
-                      <Typography className='lineUp' sx={{ animationDelay: '1.4s', fontSize: 'calc(14px + 1vw)', mt: '4vh' }}>Climate Physics</Typography>
-                      <Typography className='lineUp' sx={{ animationDelay: '2.1s', fontSize: 'calc(14px + 1vw)', mt: '4vh' }}>Meteorology</Typography>
-                      <Box className='lineUp' sx={{ animationDelay: '2.8s', display: 'flex', gap: '8%', border: '0px solid orange', mt: '4vh' }}>
+                      <Typography className='lineUp' sx={{ animationDelay: '.3s', fontSize: 'calc(14px + 1vw)' }}>Frontend - React.js - Typescript - Git - Docker - Python - SQL</Typography>
+                      <Typography className='lineUp' sx={{ animationDelay: '.6s', fontSize: 'calc(14px + 1vw)', mt: '4vh' }}>Climate Physics</Typography>
+                      <Typography className='lineUp' sx={{ animationDelay: '.9s', fontSize: 'calc(14px + 1vw)', mt: '4vh' }}>Meteorology</Typography>
+                      <Box className='lineUp' sx={{ animationDelay: '1.2s', display: 'flex', gap: '8%', border: '0px solid orange', mt: '4vh' }}>
                         <IconHolder size='calc(40px + 2vw)' link='https://linkedin.com/in/mdunkel/' >
                           <SiLinkedin />
                         </IconHolder>

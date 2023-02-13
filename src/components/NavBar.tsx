@@ -28,7 +28,7 @@ const NavBar = ({ about, project, contact, setTabIndex, tabIndex }: SiteSectionP
 
     const theme = useTheme();
 
-    const backgroundColor = alpha(theme.palette.neutrals.background, .9)
+    const backgroundColor = alpha(theme.palette.neutrals.lightestGrey, 1)
 
 
     const scrollToSection = (event: SyntheticEvent<Element, Event>, newTabIndex: string) => {
@@ -56,10 +56,20 @@ const NavBar = ({ about, project, contact, setTabIndex, tabIndex }: SiteSectionP
         <Box sx={{ height: navBarHeight }}>
 
 
-            <Tabs value={tabIndex} onChange={scrollToSection} centered textColor='primary' sx={{
-                position: "fixed", left: '50%', transform: 'translate(-50%, 0)',
-                bgcolor: backgroundColor, width: '100%', height: navBarHeight, zIndex: 1000
-            }}>
+            <Tabs value={tabIndex} onChange={scrollToSection} centered textColor='primary'
+                TabIndicatorProps={{ style: { background: theme.palette.primary.main, height: 5 } }}
+
+                sx={{
+                    "& button:hover": { color: theme.palette.primary.main },
+                    "& button:focus": { color: theme.palette.primary.main },
+                    "& button:active": { color: theme.palette.primary.main },
+                    "& button:Mui-selected": { color: theme.palette.primary.main },
+                    "& button:Mui-active": { color: theme.palette.primary.main },
+                    "& button:Mui-hover": { color: theme.palette.primary.main },
+                    position: "fixed", left: '50%', transform: 'translate(-50%, 0)',
+                    bgcolor: backgroundColor, width: '100%', height: navBarHeight, zIndex: 1000,
+                    boxShadow: 3
+                }}>
                 <Tab {...getTabProps(
                     'About Me', 'about'
                 )} />

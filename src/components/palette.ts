@@ -12,19 +12,19 @@ export const palette: PaletteOptions = {
         lightestBlue: '#E0EAF2',
         lightGrey: '#DEE2E3',
         lightestGrey: '#EEF0F1',
-        background: '#FFFFFF',
+        background: '#0E3E13',
         // background: '#FFF',
     },
     primary: {
         light: '#32936F',
-        main: '#802392',
+        main: '#FF6200',
         dark: '#41463D',
     },
     purple: {
         main: '#9747FF',
     },
     success: {
-        lighter: '#a3deb0',
+        lighter: '#06741E',
         light: '#22bc1a',
         main: '#4f8d5d',
         dark: '#388e3c',

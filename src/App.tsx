@@ -154,18 +154,18 @@ function App() {
           <SpaceBetweenSections><></></SpaceBetweenSections>
 
           <SiteSection ref={contact}>
-            <Box sx={{ border: '1px solid green' }}>
+            <Box sx={{ border: '0px solid green' }}>
               <Box textAlign='center' mt={0}>
                 <IconHolder size='40' link='https://github.com/MarkusDunkel' >
                   <FiSend />
                 </IconHolder>
-                mrks.dunkel@gmail.com
+                <Typography variant='body' sx={{ my: 'auto', color: 'white' }}>mrks.dunkel@gmail.com</Typography>
               </Box>
               <Box textAlign='center' mt={15}>
                 <IconHolder size='40' link='https://github.com/MarkusDunkel' >
                   <FiPhone />
                 </IconHolder>
-                +43 676 4807812
+                <Typography variant='body' sx={{ my: 'auto', color: 'white' }}>+43 676 4807812</Typography>
               </Box>
             </Box>
           </SiteSection>

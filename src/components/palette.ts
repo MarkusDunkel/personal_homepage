@@ -8,15 +8,14 @@ export const palette: PaletteOptions = {
     neutrals: {
         primaryDark: '#0C212C',
         darkestGrey: '#4D5558',
-        grey: '#808C91',
-        lightestBlue: '#E0EAF2',
+        grey: '#808C916C',
+        lightestBlue: '#CAECE3',
         lightGrey: '#DEE2E3',
-        lightestGrey: '#EEF0F1',
+        lightestGrey: '#F7F7F7',//'#E6ECE6',
         background: '#0E3E13',
-        // background: '#FFF',
     },
     primary: {
-        light: '#32936F',
+        light: '#FF620082',
         main: '#FF6200',
         dark: '#41463D',
     },
@@ -38,8 +37,8 @@ export const palette: PaletteOptions = {
     gradients: {
         bluePurple: 'linear-gradient(to right, #f5e3e6, #d9e4f5)',
     },
-    secondary: { main: '#DEDBD8' },
+    secondary: { main: '#FF84004A' },
     action: {
-        selected: '#FFC600',
+        selected: '#FF8400', //'#FFC600',
     },
 };

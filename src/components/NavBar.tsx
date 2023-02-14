@@ -1,5 +1,4 @@
 import { alpha, Box, Tab, Tabs, Typography, useTheme } from "@mui/material";
-import { MouseEventHandler, SyntheticEvent, useRef, useState } from "react";
 
 export const getTabProps = (
     label: string,
@@ -70,7 +69,7 @@ const NavBar = ({ about, project, contact, setTabIndex, tabIndex }: SiteSectionP
                 centered textColor='primary'
                 TabIndicatorProps={{ style: { background: theme.palette.primary.main, height: 5 } }}
                 sx={{
-                    "& button:hover": { color: theme.palette.primary.light },
+                    // "& button:hover": { color: theme.palette.primary.light },
                     "& button:Mui-active": { color: theme.palette.primary.main },
                     "& button:Mui-hover": { color: theme.palette.primary.main },
                     position: "fixed", left: '50%', transform: 'translate(-50%, 0)',
@@ -98,7 +97,3 @@ const NavBar = ({ about, project, contact, setTabIndex, tabIndex }: SiteSectionP
 }
 
 export default NavBar
-
-// function color(white: any): string {
-//     throw new Error("Function not implemented.");
-// }

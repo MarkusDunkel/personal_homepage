@@ -6,9 +6,9 @@ export interface TechLabelProps {
 }
 
 const TechLabel = ({ children }: TechLabelProps) => {
-
     const theme = useTheme();
-    return (<Card variant='outlined' sx={{ padding: 0.5 }} >
+
+    return (<Card variant='elevation' sx={{ padding: 0.5, bgcolor: theme.palette.neutrals.lightestBlue }} >
         {children}
     </Card >)
 }

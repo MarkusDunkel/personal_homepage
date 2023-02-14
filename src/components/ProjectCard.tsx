@@ -6,6 +6,7 @@ import titleImg1 from '../pictures/titleImg1.png';
 import titleImg2 from '../pictures/titleImg2.png';
 import titleImg3 from '../pictures/titleImg3.png';
 import IconHolder from './IconHolder';
+import { palette } from './palette';
 import TechLabel from './TechLabel';
 
 
@@ -35,7 +36,7 @@ const ProjectCard = ({ projectId }: ProjectCardProps) => {
                         <Typography variant='caption2'>
                             {content.title}
                         </Typography>
-                        <Card variant='outlined' sx={{ textAlign: 'left', padding: 0, minHeight: 270, bgcolor: 'rgba(255, 255, 255, .2)' }}>
+                        <Card variant='outlined' sx={{ textAlign: 'left', padding: 0, minHeight: 270, bgcolor: theme.palette.neutrals.lightestGrey }}>
                             <Stack spacing={1}>
                                 <Box sx={{ border: '0px solid orange', height: 160, overflow: 'hidden', display: 'block' }}>
                                     <img src={titleImage} alt="titleImage" style={{
@@ -63,11 +64,11 @@ const ProjectCard = ({ projectId }: ProjectCardProps) => {
                 </Card>
             </a >
             <Container sx={{ position: 'relative' }}>
-                <Box bottom={22} right='20px' sx={{ position: 'absolute', height: 40, zIndex: 2 }}>
+                <Box bottom={18} right='20px' sx={{ position: 'absolute', height: 40, zIndex: 2 }}>
                     <IconHolder size='45' link={content.repositoryLink} >
-                        <Avatar sx={{ bgcolor: 'rgba(0, 0, 50, .2)', width: '54px', height: '54px' }}>
-                            <SiGithub />
-                        </Avatar>
+                        {/* <Avatar sx={{ bgcolor: theme.palette.neutrals.grey, width: '54px', height: '54px' }}> */}
+                        <SiGithub />
+                        {/* </Avatar> */}
                     </IconHolder>
                 </Box>
             </Container>

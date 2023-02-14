@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { FaAngleDoubleUp } from "react-icons/fa";
-import { Box, Tab, Tabs, Typography } from '@mui/material';
+import { Box, Tab, Tabs, Typography, useTheme } from '@mui/material';
 import { IconContext } from "react-icons";
+import { faPersonMilitaryRifle } from '@fortawesome/free-solid-svg-icons';
 
 const ScrollToTop = () => {
+    const theme = useTheme();
     const [showScrollTopButton, setShowScrollTopButton] = useState(false);
 
     useEffect(() => {
@@ -24,10 +26,10 @@ const ScrollToTop = () => {
     };
 
     return (
-        <IconContext.Provider value={{ color: "blue", size: '100', className: "global-class-name" }}>
+        <IconContext.Provider value={{ color: theme.palette.primary.light, size: '100', className: "global-class-name" }}>
             <div >
                 {showScrollTopButton && (
-                    <Box sx={{ position: "fixed", left: '50%', transform: 'translate(-50%, 0)', bottom: 30, m: 0, border: 'solid 1px green', zIndex: 1000 }}>
+                    <Box sx={{ position: "fixed", left: '50%', transform: 'translate(-50%, 0)', bottom: 30, m: 0, border: 'solid 0px green', zIndex: 1000 }}>
                         <FaAngleDoubleUp
                             onClick={scrollTop}
                         />

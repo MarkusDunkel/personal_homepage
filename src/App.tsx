@@ -10,10 +10,10 @@ import { aboutMeText } from './components/content';
 import ContentHolderNew from './components/ContentHolderNew';
 import IconHolder from './components/IconHolder';
 import NavBar from './components/NavBar';
+import SiteSection from './components/SiteSection';
 import ProjectCard from './components/ProjectCard';
 import ScrollToTop from './components/ScrollToTop';
-import SiteSection from './components/SiteSection';
-import { defaultTheme } from './components/theme';
+import SpaceBetweenSections from './components/SpaceBetweenSections';
 import background from './pictures/background.png';
 import profPic from './pictures/profPic.png';
 
@@ -62,11 +62,11 @@ function App() {
   const contact: any = useRef<HTMLInputElement>(null);
   const theme = useTheme();
 
-  const [tabIndex, setTabIndex] = useState('about');
+  const [tabIndex, setTabIndex] = useState('');
 
 
   return (
-    <div>
+    <>
       {isLoading ?
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', width: '100%', border: '0px solid orange' }} >
           <CircularProgress />
@@ -83,7 +83,7 @@ function App() {
             setTabIndex={setTabIndex}
             tabIndex={tabIndex} />
 
-          <SiteSection>
+          <SpaceBetweenSections>
             <Grid container spacing={0}>
               <Grid item xs={12}>
                 <Box sx={{ height: '0' }}></Box>
@@ -117,88 +117,62 @@ function App() {
                 <Box sx={{ border: '0px solid orange', height: '100vh' }}></Box>
               </Grid>
             </Grid>
-          </SiteSection>
+          </SpaceBetweenSections>
 
-          <SiteSection>
-            <Grid container spacing={0}>
-              <Grid item xs={6} md={6}>
-                <Box sx={{ borderRight: 0, height: '100vh' }}></Box>
-              </Grid>
-              <Grid item xs={6} md={6}>
-                <Box sx={{ border: '0px solid orange', height: '100vh' }}></Box>
-              </Grid>
-            </Grid>
-          </SiteSection>
+          <SpaceBetweenSections><></></SpaceBetweenSections>
 
-          <SiteSection>
-            <Box sx={{ display: 'flex', border: '0px solid orange', justifyContent: 'center', gap: '2vw', width: .9, flexWrap: 'wrap' }}>
+          <SiteSection ref={about}>
+            <Box sx={{ display: 'flex', border: '1px solid red', justifyContent: 'center', gap: '2vw', width: .9, flexWrap: 'wrap' }}>
               <Box sx={{ border: '0px solid red' }}><img src={profPic} alt="profPic" style={{ maxWidth: '700px', }} /></Box>
 
-              <Box ref={about} id='about' sx={{ display: 'flex', textAlign: 'left', border: '0px solid red', p: .5, width: '100%', maxWidth: 700, bgcolor: 'rgba(0, 0, 0, 0.2)', alignContent: 'center' }}>
+              <Box id='about' sx={{ display: 'flex', textAlign: 'left', border: '1px solid red', p: .5, width: '100%', maxWidth: 700, bgcolor: 'rgba(0, 0, 0, 0.2)', alignContent: 'center' }}>
                 <Typography variant='body' sx={{ my: 'auto', color: 'white' }}>{aboutMeText}</Typography>
               </Box>
 
             </Box>
           </SiteSection>
 
-          <SiteSection>
-            <Grid container spacing={0}>
-              <Grid item xs={6} md={6}>
-                <Box sx={{ borderRight: 0, height: '100vh' }}></Box>
-              </Grid>
-              <Grid item xs={6} md={6}>
-                <Box sx={{ border: '0px solid orange', height: '100vh' }}></Box>
-              </Grid>
-            </Grid>
+          <SpaceBetweenSections><></></SpaceBetweenSections>
+
+          <SiteSection ref={project}>
+            <Box sx={{
+              display: 'flex', flexWrap: 'wrap', flexDirection: 'row-reverse',
+              justifyContent: 'center', padding: 0, margin: 0, rowGap: '30px', columnGap: '20px'
+            }}>
+              <ContentHolderNew isMobile={isMobile}>
+                <ProjectCard projectId={0} />
+              </ContentHolderNew>
+              <ContentHolderNew isMobile={isMobile}>
+                <ProjectCard projectId={1} />
+              </ContentHolderNew>
+              <ContentHolderNew isMobile={isMobile}>
+                <ProjectCard projectId={2} />
+              </ContentHolderNew>
+            </Box>
           </SiteSection>
 
-          <Box ref={project} id='projects'>
-            <SiteSection>
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row-reverse', justifyContent: 'center', padding: 0, margin: 0, rowGap: '30px', columnGap: '20px' }}>
-                <ContentHolderNew isMobile={isMobile}>
-                  <ProjectCard projectId={0} />
-                </ContentHolderNew>
-                <ContentHolderNew isMobile={isMobile}>
-                  <ProjectCard projectId={1} />
-                </ContentHolderNew>
-                <ContentHolderNew isMobile={isMobile}>
-                  <ProjectCard projectId={2} />
-                </ContentHolderNew>
+          <SpaceBetweenSections><></></SpaceBetweenSections>
+
+          <SiteSection ref={contact}>
+            <Box sx={{ border: '1px solid green' }}>
+              <Box textAlign='center' mt={0}>
+                <IconHolder size='40' link='https://github.com/MarkusDunkel' >
+                  <FiSend />
+                </IconHolder>
+                mrks.dunkel@gmail.com
               </Box>
-            </SiteSection>
-          </Box>
-
-          <SiteSection>
-            <Grid container spacing={0}>
-              <Grid item xs={6} md={6}>
-                <Box sx={{ borderRight: 0, height: '100vh' }}></Box>
-              </Grid>
-              <Grid item xs={6} md={6}>
-                <Box sx={{ border: '0px solid orange', height: '100vh' }}></Box>
-              </Grid>
-            </Grid>
+              <Box textAlign='center' mt={15}>
+                <IconHolder size='40' link='https://github.com/MarkusDunkel' >
+                  <FiPhone />
+                </IconHolder>
+                +43 676 4807812
+              </Box>
+            </Box>
           </SiteSection>
 
-          <Box height='100vh' ref={contact} id='contact'>
-            <Box textAlign='center' mt={20}>
-              <IconHolder size='40' link='https://github.com/MarkusDunkel' >
-                <FiSend />
-              </IconHolder>
-              mrks.dunkel@gmail.com
-            </Box>
-            <Box textAlign='center' mt={15}>
-              <IconHolder size='40' link='https://github.com/MarkusDunkel' >
-                <FiPhone />
-              </IconHolder>
-              +43 676 4807812
-            </Box>
-          </Box>
         </Box>
 
-
-
-      }</div >
+      }</>
   );
 };
-
 export default App;

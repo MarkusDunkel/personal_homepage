@@ -1,5 +1,5 @@
 import { alpha, Box, Tab, Tabs, Typography, useTheme } from "@mui/material";
-import { SyntheticEvent, useRef, useState } from "react";
+import { MouseEventHandler, SyntheticEvent, useRef, useState } from "react";
 
 export const getTabProps = (
     label: string,
@@ -15,12 +15,18 @@ export const getTabProps = (
     };
 };
 
+export interface OnClickProps {
+    event: React.MouseEvent<HTMLButtonElement>;
+    value: string;
+}
+
+
 interface SiteSectionProps {
     about: any;
     project: any;
     contact: any;
     setTabIndex: (newTabIndex: string) => void;
-    tabIndex: string;
+    tabIndex?: string;
 }
 const NavBar = ({ about, project, contact, setTabIndex, tabIndex }: SiteSectionProps) => {
 
@@ -30,8 +36,11 @@ const NavBar = ({ about, project, contact, setTabIndex, tabIndex }: SiteSectionP
 
     const backgroundColor = alpha(theme.palette.neutrals.lightestGrey, 1)
 
+    const scrollToSection = (
+        newTabIndex: string
+    ) => {
+        console.log(newTabIndex);
 
-    const scrollToSection = (event: SyntheticEvent<Element, Event>, newTabIndex: string) => {
         setTabIndex(newTabIndex);
         if (newTabIndex === 'about') {
             window.scrollTo({
@@ -39,12 +48,13 @@ const NavBar = ({ about, project, contact, setTabIndex, tabIndex }: SiteSectionP
                 behavior: "smooth",
             });
         } else if (newTabIndex === 'project') {
+            console.log("project.current.offsetTop", project.current.offsetTop);
             window.scrollTo({
                 top: project.current.offsetTop,
                 behavior: "smooth",
             });
         }
-        else {
+        else if (newTabIndex === 'contact') {
             window.scrollTo({
                 top: contact.current.offsetTop,
                 behavior: "smooth",
@@ -56,9 +66,9 @@ const NavBar = ({ about, project, contact, setTabIndex, tabIndex }: SiteSectionP
         <Box sx={{ height: navBarHeight }}>
 
 
-            <Tabs value={tabIndex} onChange={scrollToSection} centered textColor='primary'
+            <Tabs value={tabIndex}
+                centered textColor='primary'
                 TabIndicatorProps={{ style: { background: theme.palette.primary.main, height: 5 } }}
-
                 sx={{
                     "& button:hover": { color: theme.palette.primary.main },
                     "& button:focus": { color: theme.palette.primary.main },
@@ -70,25 +80,28 @@ const NavBar = ({ about, project, contact, setTabIndex, tabIndex }: SiteSectionP
                     bgcolor: backgroundColor, width: '100%', height: navBarHeight, zIndex: 1000,
                     boxShadow: 3
                 }}>
-                <Tab {...getTabProps(
-                    'About Me', 'about'
-                )} />
-                <Tab {...getTabProps(
-                    'Projects', 'project'
-                )} />
-                <Tab {...getTabProps(
-                    'Contact Me', 'contact'
-                )} />
+                <Tab onClick={() => scrollToSection('about')}
+                    {...getTabProps(
+                        'About Me', 'about'
+                    )} />
+                <Tab onClick={() => scrollToSection('project')}
+                    {...getTabProps(
+                        'Projects', 'project'
+                    )} />
+                <Tab onClick={() => scrollToSection('contact')}
+                    {...getTabProps(
+                        'Contact Me', 'contact'
+                    )} />
 
 
 
             </Tabs>
-        </Box>
+        </Box >
     );
 }
 
 export default NavBar
 
-function color(white: any): string {
-    throw new Error("Function not implemented.");
-}
+// function color(white: any): string {
+//     throw new Error("Function not implemented.");
+// }

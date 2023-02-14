@@ -25,8 +25,8 @@ interface SiteSectionProps {
     about: any;
     project: any;
     contact: any;
-    setTabIndex: (newTabIndex: string) => void;
-    tabIndex?: string;
+    setTabIndex: (newTabIndex: string | Boolean) => void;
+    tabIndex?: string | Boolean;
 }
 const NavBar = ({ about, project, contact, setTabIndex, tabIndex }: SiteSectionProps) => {
 
@@ -70,10 +70,7 @@ const NavBar = ({ about, project, contact, setTabIndex, tabIndex }: SiteSectionP
                 centered textColor='primary'
                 TabIndicatorProps={{ style: { background: theme.palette.primary.main, height: 5 } }}
                 sx={{
-                    "& button:hover": { color: theme.palette.primary.main },
-                    "& button:focus": { color: theme.palette.primary.main },
-                    "& button:active": { color: theme.palette.primary.main },
-                    "& button:Mui-selected": { color: theme.palette.primary.main },
+                    "& button:hover": { color: theme.palette.primary.light },
                     "& button:Mui-active": { color: theme.palette.primary.main },
                     "& button:Mui-hover": { color: theme.palette.primary.main },
                     position: "fixed", left: '50%', transform: 'translate(-50%, 0)',

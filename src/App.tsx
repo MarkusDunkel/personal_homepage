@@ -16,6 +16,7 @@ import ScrollToTop from './components/ScrollToTop';
 import SpaceBetweenSections from './components/SpaceBetweenSections';
 import background from './pictures/background.png';
 import profPic from './pictures/profPic.png';
+import TabActivationByScroll from './components/TabActivationByScroll';
 
 export const getTabProps = (
   label: string,
@@ -62,7 +63,7 @@ function App() {
   const contact: any = useRef<HTMLInputElement>(null);
   const theme = useTheme();
 
-  const [tabIndex, setTabIndex] = useState('');
+  const [tabIndex, setTabIndex] = useState<string | Boolean>(false);
 
 
   return (
@@ -72,7 +73,6 @@ function App() {
           <CircularProgress />
         </Box>
         :
-
         <Box sx={{ position: 'relative' }}>
           <Box sx={{ position: "fixed", zIndex: '-1', bgcolor: theme.palette.neutrals.background }}>
             <img src={background} alt="background" style={{ height: 'max(100vh , 60vw)', opacity: .8, filter: 'blur(0px)' }} />
@@ -122,10 +122,10 @@ function App() {
           <SpaceBetweenSections><></></SpaceBetweenSections>
 
           <SiteSection ref={about}>
-            <Box sx={{ display: 'flex', border: '1px solid red', justifyContent: 'center', gap: '2vw', width: .9, flexWrap: 'wrap' }}>
+            <Box sx={{ display: 'flex', border: '0px solid red', justifyContent: 'center', gap: '2vw', width: .9, flexWrap: 'wrap' }}>
               <Box sx={{ border: '0px solid red' }}><img src={profPic} alt="profPic" style={{ maxWidth: '700px', }} /></Box>
 
-              <Box id='about' sx={{ display: 'flex', textAlign: 'left', border: '1px solid red', p: .5, width: '100%', maxWidth: 700, bgcolor: 'rgba(0, 0, 0, 0.2)', alignContent: 'center' }}>
+              <Box id='about' sx={{ display: 'flex', textAlign: 'left', border: '0px solid red', p: .5, width: '100%', maxWidth: 700, bgcolor: 'rgba(0, 0, 0, 0.2)', alignContent: 'center' }}>
                 <Typography variant='body' sx={{ my: 'auto', color: 'white' }}>{aboutMeText}</Typography>
               </Box>
 
@@ -170,6 +170,7 @@ function App() {
             </Box>
           </SiteSection>
 
+          < TabActivationByScroll sections={[about, project, contact]} setTabIndex={setTabIndex} />
         </Box>
 
       }</>

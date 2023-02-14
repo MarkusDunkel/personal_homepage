@@ -9,7 +9,7 @@ const SpaceBetweenSections = ({ children }: SpaceBetweenSectionsProps) => {
 
     const theme = useTheme();
     return (<Box sx={{
-        width: 1, height: '100vh', display: 'flex', justifyContent: 'center', border: '5px solid brown'
+        width: 1, height: '100vh', display: 'flex', justifyContent: 'center', border: '0px solid brown'
     }} >
         {children}
     </Box>)

@@ -9,7 +9,7 @@ export interface SiteSectionProps {
 const SiteSection = React.forwardRef(({ children }: SiteSectionProps, ref: any) => {
 
     return (<Box ref={ref} sx={{
-        width: 1, minHeight: '100vh', textAlign: 'center', justifyContent: 'center', display: 'flex', alignItems: 'center', pb: 0, m: 0, border: '1px solid blue'
+        width: 1, minHeight: '100vh', textAlign: 'center', justifyContent: 'center', display: 'flex', alignItems: 'center', pb: 0, m: 0, border: '0px solid blue'
     }} >
         {children}
     </Box>)

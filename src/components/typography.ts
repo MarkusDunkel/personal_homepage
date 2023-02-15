@@ -46,8 +46,8 @@ const typography: ExtendedTypographyOptions = {
         fontFamily: 'IBM Plex Sans, sans-serif',
     },
     label2: {
-        fontWeight: 650,
-        lineHeight: 22 / 14,
+        fontWeight: 400,
+        lineHeight: '20px',
         fontSize: pxToRem(15),
         fontFamily: 'IBM Plex Sans, sans-serif',
     },

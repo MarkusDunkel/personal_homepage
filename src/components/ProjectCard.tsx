@@ -36,16 +36,18 @@ const ProjectCard = ({ projectId }: ProjectCardProps) => {
                         <Typography variant='caption2'>
                             {content.title}
                         </Typography>
-                        <Card variant='outlined' sx={{ textAlign: 'left', padding: 0, minHeight: 270, bgcolor: theme.palette.neutrals.lightestGrey }}>
-                            <Stack spacing={1}>
-                                <Box sx={{ border: '0px solid orange', height: 160, overflow: 'hidden', display: 'block' }}>
+                        <Card variant='outlined' sx={{ textAlign: 'left', padding: 0, bgcolor: theme.palette.neutrals.lightestGrey }}>
+                            <Stack spacing={0}>
+                                <Box sx={{ border: '1px solid green', height: 160, overflow: 'hidden', display: 'block' }}>
                                     <img src={titleImage} alt="titleImage" style={{
                                         width: '100%', display: 'block', marginLeft: 'auto', marginRight: 'auto'
                                     }} />
                                 </Box>
-                                <Typography variant='label' sx={{ textAlign: 'left', border: '0px solid orange', px: .5 }}>
-                                    {content.description}
-                                </Typography>
+                                <Box sx={{ border: '0px solid orange', height: 96, overflow: 'hidden', display: 'block', px: .5, pt: .5 }}>
+                                    <Typography variant='label2' sx={{ textAlign: 'left', border: '0px solid orange' }}>
+                                        {content.description}
+                                    </Typography>
+                                </Box>
 
                             </Stack>
                         </Card>

@@ -79,7 +79,6 @@ function App() {
   const project: any = useRef<HTMLInputElement>(null);
   const contact: any = useRef<HTMLInputElement>(null);
 
-  const sectionsArr = [about, project, contact];
   const theme = useTheme();
 
   const [tabIndex, setTabIndex] = useState<string | Boolean>(false);

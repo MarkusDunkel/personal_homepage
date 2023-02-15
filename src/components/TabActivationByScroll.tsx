@@ -22,7 +22,6 @@ const getSectionTops: (sectionsArr: any[]) => number[] = (sectionsArr) => {
     const sectionTops: number[] = [];
     for (let i = 0; i < sectionsArr.length; i++) {
         sectionTops.push(sectionsArr[i].current.offsetTop - vh(50));
-        // }
     }
     return (sectionTops);
 }

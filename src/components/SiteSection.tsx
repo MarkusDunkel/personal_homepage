@@ -10,7 +10,7 @@ export interface SiteSectionProps {
 const SiteSection = React.forwardRef(({ children }: SiteSectionProps, ref: any) => {
 
     const siteSectionMinHeight = vh(100) - navBarHeight;
-    console.log('siteSectionMinHeight', siteSectionMinHeight);
+    // console.log('siteSectionMinHeight', siteSectionMinHeight);
 
     return (<Box ref={ref} sx={{
         width: 1, minHeight: siteSectionMinHeight, textAlign: 'center', justifyContent: 'center', display: 'flex', alignItems: 'center', pb: 0, m: 0, border: '0px solid blue'

@@ -1,46 +1,62 @@
 import React from 'react';
 import { vh } from './NavBar';
 
-export interface section {
+declare global {
+    interface Window { sectionTops: number[]; }
+}
+
+interface section {
     current: any;
 }
-export interface sections extends Array<section> { }
+interface sections extends Array<section> { }
 
-export interface TabActivationByScrollProps {
+interface TabActivationByScrollProps {
     sections: sections;
     setTabIndex: (newTabIndex: string | Boolean) => void;
 }
+interface TabActivationByScrollState {
+    tabs: Array<boolean | string>;
+}
 
+const getSectionTops: (sectionsArr: any[]) => number[] = (sectionsArr) => {
+    const sectionTops: number[] = [];
+    for (let i = 0; i < sectionsArr.length; i++) {
+        sectionTops.push(sectionsArr[i].current.offsetTop - vh(50));
+        // }
+    }
+    return (sectionTops);
+}
 
-class TabActivationByScroll extends React.Component<TabActivationByScrollProps> {
-    state = { tabs: [false, 'about', 'project', 'contact'] };
+class TabActivationByScroll extends React.Component<TabActivationByScrollProps, TabActivationByScrollState> {
+    constructor(props: TabActivationByScrollProps) {
+        super(props);
+        this.state = {
+            tabs: [false, 'about', 'project', 'contact'],
+        };
+    }
 
     render() {
         return (null);
     }
 
     componentDidMount() {
-        let sectionTops: number[] = [];
-
-        for (let i = 0; i < this.props.sections.length; i++) {
-            sectionTops.push(this.props.sections[i].current.offsetTop - vh(50));
-        }
-
+        window.sectionTops = getSectionTops(this.props.sections);
 
         window.addEventListener("scroll", () => {
-            let secTop = sectionTops[0];
+            let secTop = window.sectionTops[0];
             let i = 0;
             while (window.scrollY > secTop) {
-                secTop = sectionTops[i];
+                secTop = window.sectionTops[i];
                 i++;
             }
             this.props.setTabIndex(this.state.tabs[i - 1]);
-            console.log('sectionTops', sectionTops)
-            console.log('window.scrollY', window.scrollY)
-            console.log('secTop', secTop)
         });
 
     };
+
+    componentDidUpdate() {
+        window.sectionTops = getSectionTops(this.props.sections);
+    }
 
 };
 

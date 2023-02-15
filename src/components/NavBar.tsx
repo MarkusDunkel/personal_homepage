@@ -13,7 +13,7 @@ export const getTabProps = (
 ) => {
     return {
         label: (
-            <Typography className='tab-label' variant='label'>
+            <Typography variant='label'>
                 {label}
             </Typography>
         ),
@@ -43,9 +43,9 @@ const NavBar = ({ about, project, contact, setTabIndex, tabIndex }: SiteSectionP
     const scrollToSection = (
         newTabIndex: string
     ) => {
-        console.log(newTabIndex);
+        // console.log(newTabIndex);
 
-        setTabIndex(newTabIndex);
+        // setTabIndex(newTabIndex);
         if (newTabIndex === 'about') {
             window.scrollTo({
                 top: about.current.offsetTop - navBarHeight,

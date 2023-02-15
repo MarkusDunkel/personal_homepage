@@ -40,7 +40,7 @@ const typography: ExtendedTypographyOptions = {
         fontSize: pxToRem(20),
     },
     label: {
-        fontWeight: 400,
+        fontWeight: 600,
         lineHeight: '20px',
         fontSize: pxToRem(15),
         fontFamily: 'IBM Plex Sans, sans-serif',

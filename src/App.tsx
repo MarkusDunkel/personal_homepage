@@ -9,7 +9,7 @@ import './App.css';
 import { aboutMeText } from './components/content';
 import ContentHolderNew from './components/ContentHolderNew';
 import IconHolder from './components/IconHolder';
-import NavBar from './components/NavBar';
+import NavBar, { vh } from './components/NavBar';
 import SiteSection from './components/SiteSection';
 import ProjectCard from './components/ProjectCard';
 import ScrollToTop from './components/ScrollToTop';
@@ -49,6 +49,7 @@ function App() {
   })
   useEffect(() => {
     function handleResize() {
+      console.log('Oh its a resize!')
       setDimensions({
         height: window.innerHeight,
         width: window.innerWidth
@@ -57,7 +58,7 @@ function App() {
     }
 
     window.addEventListener('resize', handleResize)
-  })
+  }, [])
 
   const cacheBackground = async () => {
     let bgPromise = new Promise<void>((resolve, reject) => {
@@ -77,6 +78,8 @@ function App() {
   const about: any = useRef<HTMLInputElement>(null);
   const project: any = useRef<HTMLInputElement>(null);
   const contact: any = useRef<HTMLInputElement>(null);
+
+  const sectionsArr = [about, project, contact];
   const theme = useTheme();
 
   const [tabIndex, setTabIndex] = useState<string | Boolean>(false);

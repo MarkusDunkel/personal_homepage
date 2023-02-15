@@ -73,7 +73,7 @@ function App() {
           <CircularProgress />
         </Box>
         :
-        <Box sx={{ position: 'relative' }}>
+        <Box sx={{ position: 'relative', border: '2px solid red' }}>
           <Box sx={{ position: "fixed", zIndex: '-1', bgcolor: theme.palette.neutrals.background }}>
             <img src={background} alt="background" style={{ height: 'max(100vh , 60vw)', opacity: .8, filter: 'blur(0px)' }} />
           </Box>
@@ -169,6 +169,8 @@ function App() {
               </Box>
             </Box>
           </SiteSection>
+
+          <SpaceBetweenSections><></></SpaceBetweenSections>
 
           < TabActivationByScroll sections={[about, project, contact]} setTabIndex={setTabIndex} />
         </Box>

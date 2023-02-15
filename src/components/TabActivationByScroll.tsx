@@ -1,4 +1,5 @@
 import React from 'react';
+import { vh } from './NavBar';
 
 export interface section {
     current: any;
@@ -22,7 +23,7 @@ class TabActivationByScroll extends React.Component<TabActivationByScrollProps> 
         let sectionTops: number[] = [];
 
         for (let i = 0; i < this.props.sections.length; i++) {
-            sectionTops.push(this.props.sections[i].current.offsetTop - this.props.sections[i].current.offsetHeight);
+            sectionTops.push(this.props.sections[i].current.offsetTop - vh(50));
         }
 
 

@@ -1,5 +1,12 @@
 import { alpha, Box, Tab, Tabs, Typography, useTheme } from "@mui/material";
 
+export function vh(percent: number) {
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    return (percent * h) / 100;
+}
+
+export const navBarHeight = 48;
+
 export const getTabProps = (
     label: string,
     value: string,
@@ -29,8 +36,6 @@ interface SiteSectionProps {
 }
 const NavBar = ({ about, project, contact, setTabIndex, tabIndex }: SiteSectionProps) => {
 
-    const navBarHeight = 48;
-
     const theme = useTheme();
 
     const backgroundColor = alpha(theme.palette.neutrals.lightestGrey, 1)
@@ -43,19 +48,18 @@ const NavBar = ({ about, project, contact, setTabIndex, tabIndex }: SiteSectionP
         setTabIndex(newTabIndex);
         if (newTabIndex === 'about') {
             window.scrollTo({
-                top: about.current.offsetTop,
+                top: about.current.offsetTop - navBarHeight,
                 behavior: "smooth",
             });
         } else if (newTabIndex === 'project') {
-            console.log("project.current.offsetTop", project.current.offsetTop);
             window.scrollTo({
-                top: project.current.offsetTop,
+                top: project.current.offsetTop - navBarHeight,
                 behavior: "smooth",
             });
         }
         else if (newTabIndex === 'contact') {
             window.scrollTo({
-                top: contact.current.offsetTop,
+                top: contact.current.offsetTop - navBarHeight,
                 behavior: "smooth",
             });
         }

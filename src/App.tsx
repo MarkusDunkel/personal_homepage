@@ -49,7 +49,6 @@ function App() {
   })
   useEffect(() => {
     function handleResize() {
-      console.log('Oh its a resize!')
       setDimensions({
         height: window.innerHeight,
         width: window.innerWidth
@@ -73,7 +72,6 @@ function App() {
     setTimeout(() => { setIsLoading(false); }, 0);
   };
 
-
   const isMobile = useMobileView();
   const about: any = useRef<HTMLInputElement>(null);
   const project: any = useRef<HTMLInputElement>(null);
@@ -82,7 +80,6 @@ function App() {
   const theme = useTheme();
 
   const [tabIndex, setTabIndex] = useState<string | Boolean>(false);
-
 
   return (
     <>
@@ -120,7 +117,7 @@ function App() {
                     <Typography className='lineUp' sx={{ animationDelay: '.3s', fontSize: 'calc(14px + 1vw)' }}>Frontend - React.js - Typescript - Git - Docker - Python - SQL</Typography>
                     <Typography className='lineUp' sx={{ animationDelay: '.6s', fontSize: 'calc(14px + 1vw)', mt: '4vh' }}>Climate Physics</Typography>
                     <Typography className='lineUp' sx={{ animationDelay: '.9s', fontSize: 'calc(14px + 1vw)', mt: '4vh' }}>Meteorology</Typography>
-                    <Box className='lineUp' sx={{ animationDelay: '1.2s', display: 'flex', gap: '8%', border: '0px solid orange', mt: '4vh' }}>
+                    <Box className='lineUp' sx={{ animationDelay: '1.2s', display: 'flex', gap: 'calc(30px + 3%)', border: '0px solid orange', mt: '4vh' }}>
                       <IconHolder size='calc(40px + 2vw)' link='https://linkedin.com/in/mdunkel/' >
                         <SiLinkedin />
                       </IconHolder>
@@ -155,7 +152,7 @@ function App() {
           <SiteSection ref={project}>
             <Box sx={{
               display: 'flex', flexWrap: 'wrap', flexDirection: 'row-reverse',
-              justifyContent: 'center', padding: 0, margin: 0, rowGap: '30px', columnGap: '20px'
+              justifyContent: 'center', padding: 0, margin: 0, rowGap: 'calc(30px)', columnGap: 'calc(10px + 3vw)'
             }}>
               <ContentHolderNew isMobile={isMobile}>
                 <ProjectCard projectId={0} />
@@ -174,16 +171,20 @@ function App() {
           <SiteSection ref={contact}>
             <Box sx={{ border: '0px solid green' }}>
               <Box textAlign='center' mt={0}>
-                <IconHolder size='40' link='https://github.com/MarkusDunkel' >
+                <IconHolder size='calc(40px + 1vw)' link='https://github.com/MarkusDunkel' >
                   <FiSend />
                 </IconHolder>
-                <Typography variant='body' sx={{ my: 'auto', color: 'white' }}>mrks.dunkel@gmail.com</Typography>
+                <Box mt='calc(10px + 1vw)'>
+                  <Typography variant='body' sx={{ my: 'auto', color: 'white', fontSize: 'calc(14px + 1vw)' }}>mrks.dunkel@gmail.com</Typography>
+                </Box>
               </Box>
-              <Box textAlign='center' mt={15}>
-                <IconHolder size='40' link='https://github.com/MarkusDunkel' >
+              <Box textAlign='center' mt='calc(10px + 8vh)'>
+                <IconHolder size='calc(40px + 1vw)' link='https://github.com/MarkusDunkel' >
                   <FiPhone />
                 </IconHolder>
-                <Typography variant='body' sx={{ my: 'auto', color: 'white' }}>+43 676 4807812</Typography>
+                <Box mt='calc(10px + 1vw)'>
+                  <Typography variant='body' sx={{ my: 'auto', color: 'white', fontSize: 'calc(14px + 1vw)' }}>+43 676 4807812</Typography>
+                </Box>
               </Box>
             </Box>
           </SiteSection>
@@ -191,7 +192,7 @@ function App() {
           <SpaceBetweenSections><></></SpaceBetweenSections>
 
           < TabActivationByScroll sections={[about, project, contact]} setTabIndex={setTabIndex} />
-        </Box>
+        </Box >
 
       }</>
   );

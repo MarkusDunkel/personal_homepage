@@ -67,7 +67,7 @@ const ProjectCard = ({ projectId }: ProjectCardProps) => {
             </a >
             <Container sx={{ position: 'relative' }}>
                 <Box bottom={18} right='20px' sx={{ position: 'absolute', height: 40, zIndex: 2 }}>
-                    <IconHolder size='45' link={content.repositoryLink} >
+                    <IconHolder size='calc(45px)' link={content.repositoryLink} >
                         {/* <Avatar sx={{ bgcolor: theme.palette.neutrals.grey, width: '54px', height: '54px' }}> */}
                         <SiGithub />
                         {/* </Avatar> */}

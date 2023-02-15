@@ -43,6 +43,22 @@ function App() {
   }, []);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [dimensions, setDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth
+  })
+  useEffect(() => {
+    function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth
+      })
+
+    }
+
+    window.addEventListener('resize', handleResize)
+  })
+
   const cacheBackground = async () => {
     let bgPromise = new Promise<void>((resolve, reject) => {
       const img = new Image();
@@ -73,7 +89,7 @@ function App() {
           <CircularProgress />
         </Box>
         :
-        <Box sx={{ position: 'relative', border: '2px solid red' }}>
+        <Box sx={{ position: 'relative', border: '0px solid red' }}>
           <Box sx={{ position: "fixed", zIndex: '-1', bgcolor: theme.palette.neutrals.background }}>
             <img src={background} alt="background" style={{ height: 'max(100vh , 60vw)', opacity: .8, filter: 'blur(0px)' }} />
           </Box>

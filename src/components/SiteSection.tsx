@@ -13,7 +13,7 @@ const SiteSection = React.forwardRef(({ children }: SiteSectionProps, ref: any) 
     console.log('siteSectionMinHeight', siteSectionMinHeight);
 
     return (<Box ref={ref} sx={{
-        width: 1, minHeight: siteSectionMinHeight, textAlign: 'center', justifyContent: 'center', display: 'flex', alignItems: 'center', pb: 0, m: 0, border: '2px solid blue'
+        width: 1, minHeight: siteSectionMinHeight, textAlign: 'center', justifyContent: 'center', display: 'flex', alignItems: 'center', pb: 0, m: 0, border: '0px solid blue'
     }} >
         {/* <Box sx={{ height: 'calc(100vh - navBarHeight)' }}> */}
 

@@ -35,8 +35,8 @@
         {
             "id": "2",
             "titlePicture": "pic3",
-            "projectLink": "https://orf.at",
-            "repositoryLink": "https://github.com/MarkusDunkel/personal_homepage",
+            "projectLink": "https://publish-master-thesis.web.app/",
+            "repositoryLink": "https://github.com/MarkusDunkel/multimode_model_oceans",
             "title": "Master Thesis",
             "description": "This is the description of my personal web page. This is the description of my personal web page. This is the description of my personal web page.",
             "techStack": [

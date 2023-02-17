@@ -3,32 +3,35 @@
         {
             "id": "0",
             "titlePicture": "pic1",
-            "projectLink": "https://orf.at",
+            "projectLink": "https://markusdunkel.com",
             "repositoryLink": "https://github.com/MarkusDunkel/personal_homepage",
             "title": "Personal Webpage",
-            "description": "This is the description of my personal web page. This is the description of my personal web page. This is the description of my personal web page. This is the description of my personal web page. This is the description of my personal web page. This is the description of my personal web page.",
+            "description": "Yes, the homepage you are on is my most current project. It reflects the many things I learned during my month at a start-up as a front-end developer. Nothing was copied from the web!",
             "techStack": [
                 {
                     "title": "React.js"
                 },
                 {
                     "title": "TypeScript"
+                },
+                {
+                    "title": "MUI"
                 }
             ]
         },
         {
             "id": "1",
             "titlePicture": "pic2",
-            "projectLink": "https://orf.at",
-            "repositoryLink": "https://github.com/MarkusDunkel/personal_homepage",
+            "projectLink": "https://order-app-oberhof-45720.web.app/",
+            "repositoryLink": "https://github.com/MarkusDunkel/order-app-oberhof",
             "title": "An ordering app",
-            "description": "This is the description of my .",
+            "description": "An ordering app for the unique needs of my partner as a farmer was my first application realized with React.js. The design is not perfect, but it gave me a solid understanding of CSS.",
             "techStack": [
                 {
                     "title": "React.js"
                 },
                 {
-                    "title": "TypeScript"
+                    "title": "CSS"
                 }
             ]
         },
@@ -37,8 +40,8 @@
             "titlePicture": "pic3",
             "projectLink": "https://publish-master-thesis.web.app/",
             "repositoryLink": "https://github.com/MarkusDunkel/multimode_model_oceans",
-            "title": "Master Thesis",
-            "description": "This is the description of my personal web page. This is the description of my personal web page. This is the description of my personal web page.",
+            "title": "Numerical modelling",
+            "description": "For my master's in climate physics, I got the chance to develop a numerical model from scratch to simulate the upper equatorial oceanic currents. I'm very proud of it!",
             "techStack": [
                 {
                     "title": "Python"

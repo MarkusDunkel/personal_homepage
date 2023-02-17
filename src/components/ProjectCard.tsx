@@ -23,9 +23,9 @@ const ProjectCard = ({ projectId }: ProjectCardProps) => {
 
     let titleImage: any = titleImg1;
 
-    if (content.id === '1') { titleImage = titleImg1 }
-    else if (content.id === '2') { titleImage = titleImg2 }
-    else if (content.id === '3') { titleImage = titleImg3 }
+    if (content.id === '0') { titleImage = titleImg1 }
+    else if (content.id === '1') { titleImage = titleImg2 }
+    else if (content.id === '2') { titleImage = titleImg3 }
 
     return (
         <>
@@ -38,13 +38,14 @@ const ProjectCard = ({ projectId }: ProjectCardProps) => {
                         </Typography>
                         <Card variant='outlined' sx={{ textAlign: 'left', padding: 0, bgcolor: theme.palette.neutrals.lightestGrey }}>
                             <Stack spacing={0}>
-                                <Box sx={{ border: '1px solid green', height: 160, overflow: 'hidden', display: 'block' }}>
+                                <Box sx={{ border: '0px solid green', height: 160, overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
                                     <img src={titleImage} alt="titleImage" style={{
-                                        width: '100%', display: 'block', marginLeft: 'auto', marginRight: 'auto'
+                                        width: '100%', display: 'block', marginLeft: 'auto', marginRight: 'auto', marginTop: 0, marginBottom: 0,
+                                        overflowY: 'auto'
                                     }} />
                                 </Box>
-                                <Box sx={{ border: '0px solid orange', height: 96, overflow: 'hidden', display: 'block', px: .5, pt: .5 }}>
-                                    <Typography variant='label2' sx={{ textAlign: 'left', border: '0px solid orange' }}>
+                                <Box sx={{ border: '0px solid orange', height: 96, overflow: 'auto', display: 'flex', px: .5, alignItems: 'center', textAlign: 'justify' }}>
+                                    <Typography variant='label2' sx={{ textAlign: 'justify', border: '0px solid orange' }}>
                                         {content.description}
                                     </Typography>
                                 </Box>

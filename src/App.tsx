@@ -89,8 +89,13 @@ function App() {
         </Box>
         :
         <Box sx={{ position: 'relative', border: '0px solid red' }}>
-          <Box sx={{ position: "fixed", zIndex: '-1', bgcolor: theme.palette.neutrals.background }}>
-            <img src={background} alt="background" style={{ height: 'max(100vh , 60vw)', opacity: .8, filter: 'blur(0px)' }} />
+          <Box sx={{
+            position: "fixed", zIndex: '-1', bgcolor: theme.palette.neutrals.background,
+            display: 'flex', width: '100vw', border: '0px solid orange', overflow: 'hidden', justifyContent: 'flex-end'
+          }}>
+            <img src={background} alt="background" style={{
+              height: 'max(100vh , 60vw)', opacity: .8, filter: 'blur(1px)'
+            }} />
           </Box>
 
           < ScrollToTop />
@@ -110,21 +115,32 @@ function App() {
                   height: '100vh'
                 }}></Box>
                 <Box sx={{ position: 'absolute', maxWidth: '44%', border: '0px solid orange', top: '30vh', right: '52%' }}>
-                  <Box sx={{ textAlign: 'right', color: 'white', border: '0px solid orange' }}><Typography className='lineUp' sx={{ fontSize: 'calc(14px + 1.5vw)' }}>Markus Dunkel, MSc</Typography></Box>
+                  <Box sx={{ textAlign: 'right', color: 'white', border: '0px solid orange' }}>
+                    <Typography className='lineUp' sx={{ fontSize: 'calc(14px + 1.5vw)' }}>Markus Dunkel, MSc</Typography>
+                  </Box>
+                  {/* <Box className='lineUp' sx={{ animationDelay: '1.2s', display: 'flex', width: 1, gap: 'calc(30px + 3%)', border: '1px solid green', mt: 'calc(10px + 2vh)', float: 'right', textAlign: 'right', justifyContent: 'flex-end' }}> */}
+                  <Box className='lineUp' sx={{ animationDelay: '1.2s', display: 'flex', width: 1, border: '0px solid green', mt: 'calc(10px + 2vh)', float: 'right', textAlign: 'right', justifyContent: 'space-evenly' }}>
+                    <IconHolder size='calc(40px + 2vw)' link='https://linkedin.com/in/mdunkel/' >
+                      <SiLinkedin />
+                    </IconHolder>
+                    <IconHolder size='calc(40px + 2vw)' link='https://github.com/MarkusDunkel' >
+                      <SiGithub />
+                    </IconHolder>
+                  </Box>
                 </Box>
                 <Box sx={{ position: 'absolute', maxWidth: '44%', border: '0px solid orange', top: '35vh', left: '52%', color: 'white' }}>
                   <Box sx={{ textAlign: 'left' }}>
                     <Typography className='lineUp' sx={{ animationDelay: '.3s', fontSize: 'calc(14px + 1vw)' }}>Frontend - React.js - Typescript - Git - Docker - Python - SQL</Typography>
                     <Typography className='lineUp' sx={{ animationDelay: '.6s', fontSize: 'calc(14px + 1vw)', mt: '4vh' }}>Climate Physics</Typography>
                     <Typography className='lineUp' sx={{ animationDelay: '.9s', fontSize: 'calc(14px + 1vw)', mt: '4vh' }}>Meteorology</Typography>
-                    <Box className='lineUp' sx={{ animationDelay: '1.2s', display: 'flex', gap: 'calc(30px + 3%)', border: '0px solid orange', mt: '4vh' }}>
+                    {/* <Box className='lineUp' sx={{ animationDelay: '1.2s', display: 'flex', gap: 'calc(30px + 3%)', border: '0px solid orange', mt: '6vh' }}>
                       <IconHolder size='calc(40px + 2vw)' link='https://linkedin.com/in/mdunkel/' >
                         <SiLinkedin />
                       </IconHolder>
                       <IconHolder size='calc(40px + 2vw)' link='https://github.com/MarkusDunkel' >
                         <SiGithub />
                       </IconHolder>
-                    </Box>
+                    </Box> */}
                   </Box>
                 </Box>
               </Grid>

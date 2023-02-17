@@ -9,7 +9,7 @@ export const palette: PaletteOptions = {
         primaryDark: '#0C212C',
         darkestGrey: '#4D5558',
         grey: '#808C916C',
-        lightestBlue: '#CAECE3',
+        lightestBlue: '#FFAD55',
         lightGrey: '#DEE2E3',
         lightestGrey: '#F7F7F7',//'#E6ECE6',
         background: '#0E3E13',

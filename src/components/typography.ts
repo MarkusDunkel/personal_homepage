@@ -4,7 +4,7 @@ function pxToRem(value: number) {
     return `${value / 16}rem`;
 }
 
-const FONT_PRIMARY = 'IBM Plex Sans, sans-serif';
+const FONT_PRIMARY = 'Montserrat, sans-serif';
 
 const typography: ExtendedTypographyOptions = {
     fontFamily: FONT_PRIMARY,
@@ -17,7 +17,7 @@ const typography: ExtendedTypographyOptions = {
         fontWeight: 700,
         lineHeight: '60px',
         fontSize: pxToRem(48),
-        fontFamily: 'Satoshi-Variable, sans-serif',
+        // fontFamily: 'Satoshi-Variable, sans-serif',
     },
     h2: {
         fontWeight: 650,
@@ -40,21 +40,21 @@ const typography: ExtendedTypographyOptions = {
         fontSize: pxToRem(20),
     },
     label: {
-        fontWeight: 600,
+        fontWeight: 1,
         lineHeight: '20px',
         fontSize: pxToRem(15),
-        fontFamily: 'IBM Plex Sans, sans-serif',
+        fontFamily: 'Montserrat, sans-serif',
     },
+    // Card description
     label2: {
-        fontWeight: 400,
+        fontWeight: 450,
         lineHeight: '20px',
         fontSize: pxToRem(15),
-        fontFamily: 'IBM Plex Sans, sans-serif',
     },
     body: {
-        lineHeight: '22px',
+        lineHeight: '28px',
         fontSize: pxToRem(18),
-        fontFamily: 'IBM Plex Sans, sans-serif',
+        fontFamily: 'Montserrat, sans-serif',
     },
     caption: {
         lineHeight: 1.5,
@@ -62,11 +62,12 @@ const typography: ExtendedTypographyOptions = {
         fontFamily: 'Graphik',
         color: 'blue'
     },
+    // Card headers
     caption2: {
-        fontWeight: 400,
+        fontWeight: 500,
         lineHeight: '25px',
         fontSize: pxToRem(25),
-        fontFamily: 'IBM Plex Sans, sans-serif',
+        fontFamily: 'Montserrat, sans-serif',
     },
     footnote: {
         fontWeight: 400,

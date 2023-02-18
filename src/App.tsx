@@ -158,7 +158,7 @@ function App() {
 
           <SiteSection ref={project}>
             <Box sx={{
-              display: 'flex', flexWrap: 'wrap', flexDirection: 'row-reverse',
+              display: 'flex', flexWrap: 'wrap',
               justifyContent: 'center', padding: 0, margin: 0, rowGap: 'calc(30px)', columnGap: 'calc(10px + 3vw)'
             }}>
               <ContentHolderNew isMobile={isMobile}>

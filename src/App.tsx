@@ -84,14 +84,14 @@ function App() {
   return (
     <>
       {isLoading ?
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', width: '100%', border: '0px solid orange' }} >
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', width: '100%' }} >
           <CircularProgress />
         </Box>
         :
         <Box sx={{ position: 'relative', border: '0px solid red' }}>
           <Box sx={{
             position: "fixed", zIndex: '-1', bgcolor: theme.palette.neutrals.background,
-            display: 'flex', width: '100vw', border: '0px solid orange', overflow: 'hidden', justifyContent: 'flex-end'
+            display: 'flex', width: '100vw', overflow: 'hidden', justifyContent: 'flex-end'
           }}>
             <img src={background} alt="background" style={{
               height: 'max(100vh , 60vw)', opacity: .8, filter: 'blur(1px)'
@@ -105,21 +105,19 @@ function App() {
 
           <SpaceBetweenSections>
             <Grid container spacing={0}>
-              <Grid item xs={12}>
-                <Box sx={{ height: '0' }}></Box>
-              </Grid>
               <Grid item xs={6} md={6}>
                 <Box sx={{
                   position: 'relative',
-                  zIndex: '10',
                   height: '100vh'
                 }}></Box>
-                <Box sx={{ position: 'absolute', maxWidth: '44%', border: '0px solid orange', top: '30vh', right: '52%' }}>
-                  <Box sx={{ textAlign: 'right', color: 'white', border: '0px solid orange' }}>
+                <Box sx={{ position: 'absolute', maxWidth: '44%', top: '30vh', right: '52%' }}>
+                  <Box sx={{ textAlign: 'right', color: 'white' }}>
                     <Typography className='lineUp' sx={{ fontSize: 'calc(14px + 1.5vw)' }}>Markus Dunkel, MSc</Typography>
                   </Box>
-                  {/* <Box className='lineUp' sx={{ animationDelay: '1.2s', display: 'flex', width: 1, gap: 'calc(30px + 3%)', border: '1px solid green', mt: 'calc(10px + 2vh)', float: 'right', textAlign: 'right', justifyContent: 'flex-end' }}> */}
-                  <Box className='lineUp' sx={{ animationDelay: '1.2s', display: 'flex', width: 1, border: '0px solid green', mt: 'calc(10px + 2vh)', float: 'right', textAlign: 'right', justifyContent: 'space-evenly' }}>
+                  <Box className='lineUp' sx={{
+                    animationDelay: '1.2s', display: 'flex', width: 1,
+                    mt: 'calc(10px + 2vh)', textAlign: 'right', justifyContent: 'space-evenly'
+                  }}>
                     <IconHolder size='calc(40px + 2vw)' link='https://linkedin.com/in/mdunkel/' >
                       <SiLinkedin />
                     </IconHolder>
@@ -128,19 +126,12 @@ function App() {
                     </IconHolder>
                   </Box>
                 </Box>
-                <Box sx={{ position: 'absolute', maxWidth: '44%', border: '0px solid orange', top: '35vh', left: '52%', color: 'white' }}>
+                <Box sx={{ position: 'absolute', maxWidth: '44%', top: '35vh', left: '52%', color: 'white' }}>
                   <Box sx={{ textAlign: 'left' }}>
-                    <Typography className='lineUp' sx={{ animationDelay: '.3s', fontSize: 'calc(14px + 1vw)' }}>Frontend - React.js - Typescript - Git - Docker - Python - SQL</Typography>
+                    <Typography className='lineUp' sx={{ animationDelay: '.3s', fontSize: 'calc(14px + 1vw)' }}>
+                      Frontend - React.js - Typescript - Git - Docker - Python - SQL</Typography>
                     <Typography className='lineUp' sx={{ animationDelay: '.6s', fontSize: 'calc(14px + 1vw)', mt: '4vh' }}>Climate Physics</Typography>
                     <Typography className='lineUp' sx={{ animationDelay: '.9s', fontSize: 'calc(14px + 1vw)', mt: '4vh' }}>Meteorology</Typography>
-                    {/* <Box className='lineUp' sx={{ animationDelay: '1.2s', display: 'flex', gap: 'calc(30px + 3%)', border: '0px solid orange', mt: '6vh' }}>
-                      <IconHolder size='calc(40px + 2vw)' link='https://linkedin.com/in/mdunkel/' >
-                        <SiLinkedin />
-                      </IconHolder>
-                      <IconHolder size='calc(40px + 2vw)' link='https://github.com/MarkusDunkel' >
-                        <SiGithub />
-                      </IconHolder>
-                    </Box> */}
                   </Box>
                 </Box>
               </Grid>
@@ -187,7 +178,7 @@ function App() {
           <SiteSection ref={contact}>
             <Box sx={{ border: '0px solid green' }}>
               <Box textAlign='center' mt={0}>
-                <IconHolder size='calc(40px + 1vw)' link='https://github.com/MarkusDunkel' >
+                <IconHolder size='calc(40px + 1vw)' >
                   <FiSend />
                 </IconHolder>
                 <Box mt='calc(10px + 1vw)'>
@@ -195,7 +186,7 @@ function App() {
                 </Box>
               </Box>
               <Box textAlign='center' mt='calc(10px + 8vh)'>
-                <IconHolder size='calc(40px + 1vw)' link='https://github.com/MarkusDunkel' >
+                <IconHolder size='calc(40px + 1vw)' >
                   <FiPhone />
                 </IconHolder>
                 <Box mt='calc(10px + 1vw)'>

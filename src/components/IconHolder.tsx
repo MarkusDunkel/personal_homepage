@@ -1,10 +1,10 @@
-import { Grid, useTheme } from '@mui/material';
+import { Box, Grid, useTheme } from '@mui/material';
 import { ReactNode } from 'react';
 import { IconContext } from 'react-icons';
 
 export interface IconHolderProps {
 
-    link: string;
+    link?: string;
     size: string;
     children: ReactNode;
 }
@@ -19,11 +19,11 @@ const IconHolder = ({ link, size, children }: IconHolderProps) => {
             },
             className: "global-class-name"
         }}>
-            <Grid item>
-                <a href={link}>
-                    {children}
-                </a>
-            </Grid>
+            {/* <Box> */}
+            <a href={link}>
+                {children}
+            </a>
+            {/* </Box> */}
 
         </IconContext.Provider >
     )

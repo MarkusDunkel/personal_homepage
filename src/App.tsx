@@ -7,7 +7,7 @@ import { FiPhone, FiSend } from "react-icons/fi";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import './App.css';
 import { aboutMeText } from './components/content';
-import ContentHolderNew from './components/ContentHolderNew';
+import ContentHolder from './components/ContentHolder';
 import IconHolder from './components/IconHolder';
 import NavBar, { vh } from './components/NavBar';
 import SiteSection from './components/SiteSection';
@@ -161,15 +161,15 @@ function App() {
               display: 'flex', flexWrap: 'wrap',
               justifyContent: 'center', padding: 0, margin: 0, rowGap: 'calc(30px)', columnGap: 'calc(10px + 3vw)'
             }}>
-              <ContentHolderNew isMobile={isMobile}>
+              <ContentHolder isMobile={isMobile}>
                 <ProjectCard projectId={0} />
-              </ContentHolderNew>
-              <ContentHolderNew isMobile={isMobile}>
+              </ContentHolder>
+              <ContentHolder isMobile={isMobile}>
                 <ProjectCard projectId={1} />
-              </ContentHolderNew>
-              <ContentHolderNew isMobile={isMobile}>
+              </ContentHolder>
+              <ContentHolder isMobile={isMobile}>
                 <ProjectCard projectId={2} />
-              </ContentHolderNew>
+              </ContentHolder>
             </Box>
           </SiteSection>
 

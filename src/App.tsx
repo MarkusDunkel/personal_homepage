@@ -144,10 +144,10 @@ function App() {
           <SpaceBetweenSections><></></SpaceBetweenSections>
 
           <SiteSection ref={about}>
-            <Box sx={{ display: 'flex', border: '0px solid red', justifyContent: 'center', gap: '2vw', width: .9, flexWrap: 'wrap' }}>
-              <Box sx={{ border: '0px solid red' }}><img src={profPic} alt="profPic" style={{ maxWidth: '700px', }} /></Box>
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: '2vw', width: .9, flexWrap: 'wrap' }}>
+              <Box><img src={profPic} alt="profPic" style={{ maxWidth: '700px', }} /></Box>
 
-              <Box id='about' sx={{ display: 'flex', textAlign: 'left', border: '0px solid red', p: .5, width: '100%', maxWidth: 700, bgcolor: 'rgba(0, 0, 0, 0.2)', alignContent: 'center' }}>
+              <Box id='about' sx={{ display: 'flex', textAlign: 'left', p: .5, width: '100%', maxWidth: 700, bgcolor: 'rgba(0, 0, 0, 0.2)', alignContent: 'center' }}>
                 <Typography variant='body' sx={{ my: 'auto', color: 'white' }}>{aboutMeText}</Typography>
               </Box>
 

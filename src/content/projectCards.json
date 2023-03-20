@@ -1,7 +1,7 @@
 {
     "projects": [
         {
-            "id": "0",
+            "id": 1,
             "titlePicture": "pic1",
             "projectLink": "https://markusdunkel.com",
             "repositoryLink": "https://github.com/MarkusDunkel/personal_homepage",
@@ -20,23 +20,26 @@
             ]
         },
         {
-            "id": "1",
+            "id": 0,
             "titlePicture": "pic2",
-            "projectLink": "https://order-app-oberhof-45720.web.app/",
-            "repositoryLink": "https://github.com/MarkusDunkel/order-app-oberhof",
+            "projectLink": "https://ecommerce-oberhof.web.app",
+            "repositoryLink": "https://github.com/MarkusDunkel/ecommerce_oberhof",
             "title": "An ordering app",
-            "description": "An ordering app for the unique needs of my partner as a farmer was my first application realized with React.js. The design is not perfect, but it gave me a solid understanding of CSS.",
+            "description": "My current project is an eCommerce website for a small-scale permacultural farm. So far, the logic for user handling, like registration and sign-in, is finished and realized with firebase. ",
             "techStack": [
                 {
                     "title": "React.js"
                 },
                 {
-                    "title": "CSS"
+                    "title": "TypeScript"
+                },
+                {
+                    "title": "SCSS"
                 }
             ]
         },
         {
-            "id": "2",
+            "id": 2,
             "titlePicture": "pic3",
             "projectLink": "https://publish-master-thesis.web.app/",
             "repositoryLink": "https://github.com/MarkusDunkel/multimode_model_oceans",

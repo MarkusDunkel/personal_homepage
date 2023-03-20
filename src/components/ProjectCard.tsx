@@ -19,32 +19,32 @@ const ProjectCard = ({ projectId }: ProjectCardProps) => {
 
     const theme = useTheme();
 
-    const content = c.projects[projectId];
+    const content: any = c.projects.find(x => x.id === projectId)
 
     let titleImage: any = titleImg1;
 
-    if (content.id === '0') { titleImage = titleImg1 }
-    else if (content.id === '1') { titleImage = titleImg2 }
-    else if (content.id === '2') { titleImage = titleImg3 }
+    if (content.id === 0) { titleImage = titleImg2 }
+    else if (content.id === 1) { titleImage = titleImg1 }
+    else if (content.id === 2) { titleImage = titleImg3 }
 
     return (
         <>
 
             <a href={content.projectLink}>
-                <Card sx={{ position: 'relative', height: .93, p: 2, border: '0px solid brown', bgcolor: 'rgba(255, 255, 255, .7)' }}>
+                <Card sx={{ position: 'relative', height: .93, p: 2, bgcolor: 'rgba(255, 255, 255, .7)' }}>
                     <Stack spacing={2}>
                         <Typography variant='caption2'>
                             {content.title}
                         </Typography>
                         <Card variant='outlined' sx={{ textAlign: 'left', padding: 0, bgcolor: theme.palette.neutrals.lightestGrey }}>
                             <Stack spacing={0}>
-                                <Box sx={{ border: '0px solid green', height: 160, overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
+                                <Box sx={{ height: 160, overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
                                     <img src={titleImage} alt="titleImage" style={{
                                         width: '100%', display: 'block', marginLeft: 'auto', marginRight: 'auto', marginTop: 0, marginBottom: 0,
                                         overflowY: 'auto'
                                     }} />
                                 </Box>
-                                <Box sx={{ border: '0px solid orange', height: 96, overflow: 'auto', display: 'flex', px: .5, alignItems: 'center', textAlign: 'justify' }}>
+                                <Box sx={{ height: 96, overflow: 'auto', display: 'flex', px: .5, alignItems: 'center', textAlign: 'justify' }}>
                                     <Typography variant='label2' sx={{ textAlign: 'justify', border: '0px solid orange' }}>
                                         {content.description}
                                     </Typography>
@@ -54,7 +54,7 @@ const ProjectCard = ({ projectId }: ProjectCardProps) => {
                         </Card>
                         <Typography variant='body' sx={{ textAlign: 'left' }} >
                             <Grid container direction='row' spacing={2}>
-                                {content.techStack.map(({ title }) => {
+                                {content.techStack.map(({ title }: any) => {
                                     return (
                                         <Grid item>
                                             <TechLabel>{title}</TechLabel>
@@ -69,9 +69,7 @@ const ProjectCard = ({ projectId }: ProjectCardProps) => {
             <Container sx={{ position: 'relative' }}>
                 <Box bottom={18} right='20px' sx={{ position: 'absolute', height: 40, zIndex: 2 }}>
                     <IconHolder size='calc(45px)' link={content.repositoryLink} >
-                        {/* <Avatar sx={{ bgcolor: theme.palette.neutrals.grey, width: '54px', height: '54px' }}> */}
                         <SiGithub />
-                        {/* </Avatar> */}
                     </IconHolder>
                 </Box>
             </Container>

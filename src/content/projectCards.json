@@ -6,7 +6,7 @@
             "projectLink": "https://markusdunkel.com",
             "repositoryLink": "https://github.com/MarkusDunkel/personal_homepage",
             "title": "Personal Webpage",
-            "description": "Yes, the homepage you are on is my most current project. It reflects the many things I learned during my month at a start-up as a front-end developer. Nothing was copied from the web!",
+            "description": "The homepage you are on is one of my newer projects. It reflects the many things I learned during my month at the start-up HeyLama GmbH as a front-end developer.",
             "techStack": [
                 {
                     "title": "React.js"
@@ -25,7 +25,7 @@
             "projectLink": "https://ecommerce-oberhof.web.app",
             "repositoryLink": "https://github.com/MarkusDunkel/ecommerce_oberhof",
             "title": "An ordering app",
-            "description": "My current project is an eCommerce website for a small-scale permacultural farm. So far, the logic for user handling, like registration and sign-in, is finished and realized with firebase. ",
+            "description": "My current project is an eCommerce website for a small-scale permacultural farm. So far, the logic for user handling, like registration and sign-in, is finished and realized with firebase.",
             "techStack": [
                 {
                     "title": "React.js"
